@@ -80,6 +80,7 @@
     </Target>    
      <!-- Step 2  Clean up Directories-->
     <Target Name="AfterBuild" DependsOnTargets="CompileWeb">
+	    	<Message Text="After Build" />	
 	    <ItemGroup>
 		    <FilesToCopy_PlanDesigner Include="$(ProjectFolder)\PlanDesigner_Report\**\*.*"  Condition="$(BuildProject)=='QCommissionPortal,sln'" />
 		    <ReportComponents Include="$(ProjectFolder)\ReportComponents\**\*.*"  Condition="$(BuildProject)=='QCommissionPortal.sln'" />
@@ -165,7 +166,8 @@
                 RetryDelayMilliseconds="300"/>
     </Target>
     <!-- Step 4 FTP Folder-->
-    <Target Name="FTPUpload" DependsOnTargets="CopyInOneFolder" Condition="$(BuildProject)=='QCommissionPortal.sln'" >                
+    <Target Name="FTPUpload" DependsOnTargets="CopyInOneFolder" Condition="$(BuildProject)=='QCommissionPortal.sln'" >   
+	<Message Text="FTP Folder" />	
         <FtpUploadDirectoryContent 
                 ServerHost="$(ftpHost)"
                 Username="cellarstone"
