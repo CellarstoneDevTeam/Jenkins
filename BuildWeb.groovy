@@ -46,6 +46,9 @@ return listdll
 def compilesolution(solution) {
 def MSBuildPath = env.MSBuildPath
 def MajorVersion = env.MajorVersion
+def FTPHOST = env.FTPHOST
+def FTPUserName = env.FTPUserName
+def FTPPassword = env.FTPPassword
 def Release = env.Release
 def Build = env.Build
 def Patch = env.Patch
@@ -69,6 +72,9 @@ def Patch = env.Patch
  bat '''
         "'''+ MSBuildPath +  '''" ''' +  buildscriptPath +'\\BuildWeb.msbuild'  +  ''' /p:Configuration=Release ''' + 
         ''' /p:BuildProject="''' + ProjectName +
+	''' /p:FTPHOST="''' + FTPHOST +		
+	''' /p:FTPUserName="''' + FTPUserName +
+	''' /p:FTPPassword="''' + FTPPassword +
         '''" /p:ProjectFolder="''' + ProjectPath + '''"'''
 }
 
