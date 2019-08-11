@@ -1,4 +1,4 @@
-Declare @BackupFile varchar(255)
+Declare @SQL_SCRIPT varchar(max)
 IF  NOT EXISTS (SELECT * FROM sys.databases WHERE name = N'QCBuild')
 BEGIN
     
@@ -17,13 +17,15 @@ BEGIN
        FILEGROWTH = 5 )
    
 END
-set @BackupFile = @FTPPath + '\Qcommission.bak'
 ALTER DATABASE QCBuild
 SET SINGLE_USER WITH
 ROLLBACK IMMEDIATE
 --$(FTPPath)
 ----Restore Database
-RESTORE DATABASE QCBuild FROM DISK = @BackupFile WITH replace 
+--RESTORE DATABASE QCBuild FROM DISK = @BackupFile WITH replace 
+SET @SQL_SCRIPT = 'RESTORE DATABASE QCBuild FROM DISK = '+ @FTPPath + '\Qcommission.bak'
+EXECUTE (@SQL_SCRIPT)
+
  
 /*If there is no error in statement before database will be in multiuser
 mode.
