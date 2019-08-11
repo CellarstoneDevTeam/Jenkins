@@ -29,7 +29,7 @@ SET @SQL_SCRIPT = 'RESTORE DATABASE QCBuild FROM DISK = '+ @FTPPath + '\Qcommiss
 --SET @SQL_SCRIPT = 'RESTORE DATABASE QCBuild FROM DISK = ''' + QUOTENAME(@FTPPath + '\Qcommission.bak') +  'WITH replace;'
 EXECUTE (@SQL_SCRIPT)
 use qcbuild
-insert into buildlog (logtext) values (@FTPPath)
+insert into buildlog (logtext) values (@SQL_SCRIPT)
 
  
 /*If there is no error in statement before database will be in multiuser
