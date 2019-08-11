@@ -69,8 +69,8 @@ def Patch = env.Patch
 
  /*bat '''
         "'''+ MSBuildPath +  '''" ''' + solution  +  ''' /t:Build /p:Configuration=Release /p:TargetFramework=v4.6.1 /p:version=''' + version */
- PRINT "${params.Project}" 
-	if ("${params.Project}" !="QCommission Portal")
+
+	if (ProjectName!="QCommission Portal")
 	{
 		
 	bat '''
@@ -85,7 +85,7 @@ def Patch = env.Patch
 	{
 		
 	bat '''
-        "'''+ MSBuildPath +  '''" ''' +  buildscriptPath +'\\BuildWeb.msbuild'  +  ''' /p:Configuration=Release ''' + 
+        "'''+ MSBuildPath +  '''" ''' +  buildscriptPath +'\\BuildWeb.msbuild'  +  ''' /t:CompleteBuild /p:Configuration=Release ''' + 
         ''' /p:BuildProject="''' + ProjectName +
 	'''" /p:FTPHOST=''' + FTPHOST +		
 	''' /p:FTPUserName=''' + FTPUserName +
