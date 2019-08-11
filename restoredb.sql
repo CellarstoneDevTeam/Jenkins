@@ -24,7 +24,8 @@ ROLLBACK IMMEDIATE
 ----Restore Database
 --RESTORE DATABASE QCBuild FROM DISK = @BackupFile WITH replace 
 --SET @SQL_SCRIPT = 'RESTORE DATABASE QCBuild FROM DISK = '+ @FTPPath + '\Qcommission.bak'
-SET @SQL_SCRIPT = 'RESTORE DATABASE QCBuild FROM DISK = ''' + @FTPPath + '\Qcommission.bak'' WITH replace;'
+--SET @SQL_SCRIPT = 'RESTORE DATABASE QCBuild FROM DISK = ''' + @FTPPath + '\Qcommission.bak'' WITH replace;'
+SET @SQL_SCRIPT = 'RESTORE DATABASE QCBuild FROM DISK = ''' + '' WITH replace;'
 --EXECUTE (@SQL_SCRIPT)
 use qcbuild
 insert into buildlog (logtext) values (@FTPPath)
