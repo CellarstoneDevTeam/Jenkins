@@ -11,9 +11,9 @@
 	 
     </PropertyGroup>
     <PropertyGroup>
-        <SQLDatasource>10.199.4.20</Datasource>
-        <SQLUserName>qcadmin</UserName>
-	<SQLPassword>QCADMIN</Password>
+        <SQLDatasource>10.199.4.20</SQLDatasource>
+        <SQLUserName>qcadmin</SQLUserName>
+	<SQLPassword>QCADMIN</SQLPassword>
     </PropertyGroup>
 	
     <PropertyGroup>
