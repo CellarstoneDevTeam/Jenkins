@@ -72,7 +72,7 @@ def Patch = env.Patch
  if ("${params.Project}" !="QCommission Portal")
 	{
 	bat '''
-        "'''+ MSBuildPath +  '''" ''' +  buildscriptPath +'\\BuildWeb.msbuild'  +  ''' /p:Configuration=Release ''' + 
+        "'''+ MSBuildPath +  '''" ''' +  buildscriptPath +'\\BuildWeb.msbuild'  +  ''' /t:AfterBuild /p:Configuration=Release ''' + 
         ''' /p:BuildProject="''' + ProjectName +
 	'''" /p:FTPHOST=''' + FTPHOST +		
 	''' /p:FTPUserName=''' + FTPUserName +
@@ -82,7 +82,7 @@ def Patch = env.Patch
 	else
 	{
 	bat '''
-        "'''+ MSBuildPath +  '''" ''' +  buildscriptPath +'\\BuildWeb.msbuild'  +  ''' /t:AfterBuild /p:Configuration=Release ''' + 
+        "'''+ MSBuildPath +  '''" ''' +  buildscriptPath +'\\BuildWeb.msbuild'  +  ''' /p:Configuration=Release ''' + 
         ''' /p:BuildProject="''' + ProjectName +
 	'''" /p:FTPHOST=''' + FTPHOST +		
 	''' /p:FTPUserName=''' + FTPUserName +
