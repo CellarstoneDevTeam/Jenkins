@@ -7,7 +7,7 @@
         <FTPHost>10.199.4.19</FTPHost>
 	<FTPUserName>Cellarstone</FTPUserName>
 	<FTPPassword>Cellarstone1</FTPPassword>
-	<FTPFolder>D:\FTPDevServer</FTPFolder> 
+	<FTPFolder>'D:\FTPDevServer'</FTPFolder> 
 	 
     </PropertyGroup>
     <PropertyGroup>
