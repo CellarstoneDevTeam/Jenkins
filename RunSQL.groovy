@@ -21,7 +21,9 @@ node
           def FTPPassword = env.FTPPassword
 
           def FTPFolder = env.FTPFolder
-
+          def SQLDatasource = env.SQLDatasource
+          def SQLUserName = env.SQLUserName
+          def SQLPassword = env.SQLPassword
           
 
           def QCVSSWorkFolder = env.QCVSSWorkFolder
@@ -29,7 +31,9 @@ node
           bat '''
 
           "'''+ MSBuildPath +  '''" ''' +  QCVSSWorkFolder.replace("\\\\", "\\") + "\\BuildScript" +'\\BuildWeb.msbuild'  +  ''' /t:''' + Target + 
-
+          ''' /p:SQLDatasource="''' + SQLDatasource +
+          ''' /p:SQLUserName="''' + SQLUserName +     
+          ''' /p:SQLPassword="''' + SQLPassword +              
           ''' /p:FTPHOST="''' + FTPHost +
 
           ''' /p:FTPUserName="''' + FTPUserName +
