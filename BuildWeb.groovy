@@ -71,8 +71,8 @@ def Patch = env.Patch
         "'''+ MSBuildPath +  '''" ''' + solution  +  ''' /t:Build /p:Configuration=Release /p:TargetFramework=v4.6.1 /p:version=''' + version */
  bat '''
         "'''+ MSBuildPath +  '''" ''' +  buildscriptPath +'\\BuildWeb.msbuild'  +  ''' /p:Configuration=Release ''' + 
-        ''' /p:BuildProject=''' + ProjectName +
-	''' /p:FTPHOST=''' + FTPHOST +		
+        ''' /p:BuildProject="''' + ProjectName +
+	'''" /p:FTPHOST=''' + FTPHOST +		
 	''' /p:FTPUserName=''' + FTPUserName +
 	''' /p:FTPPassword=''' + FTPPassword +
         ''' /p:ProjectFolder="''' + ProjectPath + '''"'''
