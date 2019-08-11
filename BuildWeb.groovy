@@ -164,8 +164,8 @@ stage('Get Code from VSS')
          cd ''' + QCVSSWorkFolder + '''
 	 rd /s /q "''' + QCVSSProjectFolder + '''"  */
 /*	  bat ''' d:
-         cd ''' + QCVSSWorkFolder + '''
-	 rd /s /q "''' + QCVSSProjectFolder+Precompilefolder + '''"''' + ''' */
+         cd ''' + QCVSSWorkFolder + ''' */
+	 rd /s /q "''' + QCVSSProjectFolder+Precompilefolder + '''"''' + ''' 
 	    
 
  	 bat '''  cd /d ''' + QCVSSWorkFolder + '''
