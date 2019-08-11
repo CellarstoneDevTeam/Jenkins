@@ -1,4 +1,4 @@
-
+Declare @BackupFile varchar(255)
 IF  NOT EXISTS (SELECT * FROM sys.databases WHERE name = N'QCBuild')
 BEGIN
     
@@ -17,16 +17,15 @@ BEGIN
        FILEGROWTH = 5 )
    
 END
-
+set @BackupFile = @FTPPath + '\\Qcommission.bak'
 ALTER DATABASE QCBuild
 SET SINGLE_USER WITH
 ROLLBACK IMMEDIATE
 --$(FTPPath)
 ----Restore Database
 RESTORE DATABASE QCBuild
-FROM DISK = @FTPPath + '\\qcommission.bak'
-WITH MOVE 'QCBuildMDF' TO 'D:\QCBuildMDFFile.mdf',
-MOVE 'QCBuildLDF' TO 'D:\QCBuildLDFFile.ldf'
+FROM DISK = @FTPPath WITH replace 
+
  
 /*If there is no error in statement before database will be in multiuser
 mode.
