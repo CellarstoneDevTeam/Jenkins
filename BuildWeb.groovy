@@ -70,7 +70,7 @@ def Patch = env.Patch
  /*bat '''
         "'''+ MSBuildPath +  '''" ''' + solution  +  ''' /t:Build /p:Configuration=Release /p:TargetFramework=v4.6.1 /p:version=''' + version */
 
-	if (ProjectName!="QCommission Portal")
+	if (ProjectName!="QCommissionPortal.sln")
 	{
 		
 	bat '''
