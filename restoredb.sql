@@ -17,7 +17,7 @@ BEGIN
        FILEGROWTH = 5 )
    
 END
-set @BackupFile = @FTPPath + '\\Qcommission.bak'
+set @BackupFile = @FTPPath + '\Qcommission.bak'
 ALTER DATABASE QCBuild
 SET SINGLE_USER WITH
 ROLLBACK IMMEDIATE
