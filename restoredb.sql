@@ -24,7 +24,7 @@ ROLLBACK IMMEDIATE
 --$(FTPPath)
 ----Restore Database
 RESTORE DATABASE QCBuild
-FROM DISK = @FTPPath + '\qcommission.bak'
+FROM DISK = @FTPPath + '\\qcommission.bak'
 WITH MOVE 'QCBuildMDF' TO 'D:\QCBuildMDFFile.mdf',
 MOVE 'QCBuildLDF' TO 'D:\QCBuildLDFFile.ldf'
  
