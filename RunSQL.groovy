@@ -31,9 +31,9 @@ node
           bat '''
 
           "'''+ MSBuildPath +  '''" ''' +  QCVSSWorkFolder.replace("\\\\", "\\") + "\\BuildScript" +'\\BuildWeb.msbuild'  +  ''' /t:''' + Target + 
-          ''' /p:SQLDatasource="''' + SQLDatasource +
-          ''' /p:SQLUserName="''' + SQLUserName +     
-          ''' /p:SQLPassword="''' + SQLPassword +              
+          ''' /p:SQLDatasource=''' + SQLDatasource +
+          ''' /p:SQLUserName=''' + SQLUserName +     
+          ''' /p:SQLPassword=''' + SQLPassword +              
           ''' /p:FTPHOST="''' + FTPHost +
 
           ''' /p:FTPUserName="''' + FTPUserName +
