@@ -156,9 +156,14 @@ stage('Get Code from VSS')
 	
 	 if (CleanBuild =="No")
 	    {
-		Precompilefolder = "\\PrecompileFolder"  
+		/*Delete only the precompilefolder */
+		Precompilefolder = "\\BuildScript\\PrecompileFolder\\QCVSSProjectFolder"  
 	    }
-	  
+	  else
+	  {
+		/*Delete entire source */
+		Precompilefolder = "\\QCVSSProjectFolder"   
+	  }
 	    
 /*	    bat ''' d:
          cd ''' + QCVSSWorkFolder + '''
