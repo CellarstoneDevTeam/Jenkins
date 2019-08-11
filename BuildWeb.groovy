@@ -72,7 +72,7 @@ def Patch = env.Patch
  PRINT "${params.Project}" 
 	if ("${params.Project}" !="QCommission Portal")
 	{
-		PRINT "NOT EQUAL"
+		
 	bat '''
         "'''+ MSBuildPath +  '''" ''' +  buildscriptPath +'\\BuildWeb.msbuild'  +  ''' /t:AfterBuild /p:Configuration=Release ''' + 
         ''' /p:BuildProject="''' + ProjectName +
@@ -83,7 +83,7 @@ def Patch = env.Patch
 	}
 	else
 	{
-		PRINT "EQUAL"
+		
 	bat '''
         "'''+ MSBuildPath +  '''" ''' +  buildscriptPath +'\\BuildWeb.msbuild'  +  ''' /p:Configuration=Release ''' + 
         ''' /p:BuildProject="''' + ProjectName +
