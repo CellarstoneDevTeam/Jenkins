@@ -27,7 +27,7 @@ SET @SQL_SCRIPT = 'RESTORE DATABASE QCBuild FROM DISK = '+ @FTPPath + '\Qcommiss
 --SET @SQL_SCRIPT = 'RESTORE DATABASE QCBuild FROM DISK = ''' + @FTPPath + '\Qcommission.bak'' WITH replace;'
 --SET @SQL_SCRIPT = 'RESTORE DATABASE QCBuild FROM DISK = ''' + ''' WITH replace;'
 --SET @SQL_SCRIPT = 'RESTORE DATABASE QCBuild FROM DISK = ''' + QUOTENAME(@FTPPath + '\Qcommission.bak') +  'WITH replace;'
---EXECUTE (@SQL_SCRIPT)
+EXECUTE (@SQL_SCRIPT)
 use qcbuild
 insert into buildlog (logtext) values (@FTPPath)
 
