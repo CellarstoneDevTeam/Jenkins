@@ -23,7 +23,7 @@ SET SINGLE_USER WITH
 ROLLBACK IMMEDIATE
 --$(FTPPath)
 ----Restore Database
-RESTORE DATABASE QCBuild FROM DISK = @FTPPath WITH replace 
+RESTORE DATABASE QCBuild FROM DISK = @BackupFile WITH replace 
  
 /*If there is no error in statement before database will be in multiuser
 mode.
