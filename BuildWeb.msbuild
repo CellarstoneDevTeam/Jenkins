@@ -61,6 +61,7 @@
     <!-- Specify Targets -->
     <!-- Step 1  Compile Web Application-->
     <Target Name="CompileWeb">
+	    <Message Text="Compile Web" />
         <AspNetCompiler
             VirtualPath="$(BuildProject)"
             PhysicalPath="$(ProjectFolder)"
