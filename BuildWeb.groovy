@@ -73,7 +73,7 @@ def Patch = env.Patch
 	if (UploadToFTP=="Yes")
 	{
 		
-		Echo 'Target Complete Build with FTP"
+		Print 'Target Complete Build with FTP"
 		bat '''
         	"'''+ MSBuildPath +  '''" ''' +  buildscriptPath +'\\BuildWeb.msbuild'  +  ''' /t:CompleteBuild /p:Configuration=Release ''' + 
         	''' /p:BuildProject="''' + ProjectName +
@@ -85,7 +85,7 @@ def Patch = env.Patch
 	}
 	else
 	{
-		Echo 'Target after build only"
+		Print 'Target after build only"
 		bat '''
 		"'''+ MSBuildPath +  '''" ''' +  buildscriptPath +'\\BuildWeb.msbuild'  +  ''' /t:AfterBuild /p:Configuration=Release ''' + 
         	''' /p:BuildProject="''' + ProjectName +
