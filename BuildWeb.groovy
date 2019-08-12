@@ -179,7 +179,7 @@ stage('Get Code from VSS')
 	  else
 	  {
 		/*Delete entire source */
-		Precompilefolder = "\\" + QCVSSProjectFolder"   
+		Precompilefolder = "\\" + QCVSSProjectFolder 
 	  }
 	    
 /*	    bat ''' d:
