@@ -70,28 +70,29 @@ def Patch = env.Patch
  /*bat '''
         "'''+ MSBuildPath +  '''" ''' + solution  +  ''' /t:Build /p:Configuration=Release /p:TargetFramework=v4.6.1 /p:version=''' + version */
 
-	if (ProjectName!="QCommissionPortal.sln")
+	if (UploadToFTP=="Yes")
 	{
 		
-	bat '''
-        "'''+ MSBuildPath +  '''" ''' +  buildscriptPath +'\\BuildWeb.msbuild'  +  ''' /t:AfterBuild /p:Configuration=Release ''' + 
-        ''' /p:BuildProject="''' + ProjectName +
-	'''" /p:FTPHOST=''' + FTPHOST +		
-	''' /p:FTPUserName=''' + FTPUserName +
-	''' /p:FTPPassword=''' + FTPPassword +
-        ''' /p:ProjectFolder="''' + ProjectPath + '''"'''
+		Echo 'Target Complete Build with FTP"
+		bat '''
+        	"'''+ MSBuildPath +  '''" ''' +  buildscriptPath +'\\BuildWeb.msbuild'  +  ''' /t:CompleteBuild /p:Configuration=Release ''' + 
+        	''' /p:BuildProject="''' + ProjectName +
+		'''" /p:FTPHOST=''' + FTPHOST +		
+		''' /p:FTPUserName=''' + FTPUserName +
+		''' /p:FTPPassword=''' + FTPPassword +
+        	''' /p:ProjectFolder="''' + ProjectPath + '''"'''		
+	
 	}
 	else
 	{
-		
-	bat '''
-        "'''+ MSBuildPath +  '''" ''' +  buildscriptPath +'\\BuildWeb.msbuild'  +  ''' /t:CompleteBuild /p:Configuration=Release ''' + 
-        ''' /p:BuildProject="''' + ProjectName +
-	'''" /p:FTPHOST=''' + FTPHOST +		
-	''' /p:FTPUserName=''' + FTPUserName +
-	''' /p:FTPPassword=''' + FTPPassword +
-        ''' /p:ProjectFolder="''' + ProjectPath + '''"'''
-		
+		Echo 'Target after build only"
+		bat '''
+		"'''+ MSBuildPath +  '''" ''' +  buildscriptPath +'\\BuildWeb.msbuild'  +  ''' /t:AfterBuild /p:Configuration=Release ''' + 
+        	''' /p:BuildProject="''' + ProjectName +
+		'''" /p:FTPHOST=''' + FTPHOST +		
+		''' /p:FTPUserName=''' + FTPUserName +
+		''' /p:FTPPassword=''' + FTPPassword +
+        	''' /p:ProjectFolder="''' + ProjectPath + '''"'''		
 	}
 }
 
