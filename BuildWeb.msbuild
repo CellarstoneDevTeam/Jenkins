@@ -192,7 +192,7 @@
                 Recursive="true" />
     </Target>
     <!-- Step 6 Restore The DB-->
-    <Target Name="RestoreDB">
+    <Target Name="RestoreDB" DependsOnTargets="FTPDBCopy">
 	    <Message Text="QCOMM DB Restore" />	
 	    <Message Text ="$(FTPFolder)" />
 	     <Message Text ="$(SQLDataSource)" />
