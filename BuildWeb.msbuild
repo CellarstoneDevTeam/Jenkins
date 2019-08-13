@@ -187,7 +187,7 @@
                 ServerHost="$(FTPHost)"
                 Username="$(FTPUserName)"
                 Password="$(FTPPassword)"
-                LocalDirectory="$(MSBuildProjectDirectory)\BuildScript\QCommDB.Bak"
+                LocalDirectory="$(MSBuildProjectDirectory)\BuildScript\qcommission.bak"
                 RemoteDirectory="/"
                 Recursive="true" />
     </Target>
