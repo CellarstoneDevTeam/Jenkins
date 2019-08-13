@@ -26,7 +26,7 @@ node
           ''' /p:FTPHOST=''' + FTPHost +
           ''' /p:FTPUserName=''' + FTPUserName +
           ''' /p:FTPPassword=''' + FTPPassword +
-          '''" /p:FTPFolder="''' + FTPFolder + '''"'''
+          ''' /p:FTPFolder="''' + FTPFolder + '''"'''
 
     }
 
