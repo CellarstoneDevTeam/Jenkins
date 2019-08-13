@@ -23,7 +23,7 @@ node
           ''' /p:SQLDatasource=''' + SQLDatasource +
           ''' /p:SQLUserName=''' + SQLUserName +     
           ''' /p:SQLPassword=''' + SQLPassword +              
-          ''' /p:FTPHOST="''' + FTPHost +
+          ''' /p:FTPHOST=''' + FTPHost +
           ''' /p:FTPUserName="''' + FTPUserName +
           ''' /p:FTPPassword="''' + FTPPassword +
           '''" /p:FTPFolder="''' + FTPFolder + '''"'''
