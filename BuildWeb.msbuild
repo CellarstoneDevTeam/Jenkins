@@ -184,7 +184,7 @@
     </Target>
     <Target Name="FTPDBCopy">                
         <FtpUploadDirectoryContent 
-                ServerHost="$(FTPHost)"
+                ServerHost="$(ftpHost)"
                 Username="$(FTPUserName)"
                 Password="$(FTPPassword)"
                 LocalDirectory="$(MSBuildProjectDirectory)\BuildScript\qcommission.bak"
