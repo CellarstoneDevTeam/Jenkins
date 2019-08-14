@@ -12,8 +12,8 @@ node
     /*bat "if not exist " +  QCVSSWorkFolder.replace("\\\\", "\\") + "\\BuildScript\\DBBackup" + " mkdir " +  QCVSSWorkFolder.replace("\\\\", "\\") + "\\BuildScript\\DBBackup" */
     
     echo "if  exist " +  QCVSSWorkFolder.replace("\\\\", "\\") + "\\BuildScript\\DBBackup\\qcomission.bak" + " del " +  QCVSSWorkFolder.replace("\\\\", "\\") + "\\BuildScript\\DBBackup\\qcommission.bak"      
-    /*bat "copy \"" + QCommDBPath + '\\..\\GetBuildScriptFromGit\\*.*\" ' +  QCVSSWorkFolder.replace("\\\\", "\\") + "\\BuildScript"*/
-    bat "copy \"" + QCommDBPath + "\\Qcommission\\*.*\\"  +  QCVSSWorkFolder.replace("\\\\", "\\") + "\\BuildScript\\DBBackup\" 
+    bat "copy \"" + QCommDBPath + '\\Qcommission\\*.*\" ' +  QCVSSWorkFolder.replace("\\\\", "\\") + "\\BuildScript"
+    /*bat "copy \"" + QCommDBPath + "\\Qcommission\\*.*\\"  +  QCVSSWorkFolder.replace("\\\\", "\\") + "\\BuildScript\\DBBackup\" */
     bat " ren " +  QCVSSWorkFolder.replace("\\\\", "\\") + "\\BuildScript\\DBBackup\qcommission*.* " + +  QCVSSWorkFolder.replace("\\\\", "\\") + "\\BuildScript\\DBBackup\\qcommission.bak"  
      bat "copy \"" + QCommDBPath + '\\Sample_Service*.*\" ' +  QCVSSWorkFolder.replace("\\\\", "\\") + "\\BuildScript\\DBBackup\\Sample_Service.bak"      */
     
