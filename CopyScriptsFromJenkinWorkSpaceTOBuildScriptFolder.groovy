@@ -8,8 +8,9 @@ node
     
      bat "copy \"" + "$WORKSPACE" + '\\..\\GetBuildScriptFromGit\\*.*\" ' +  QCVSSWorkFolder.replace("\\\\", "\\") + "\\BuildScript"
      echo "copy \"" + QCommDBPath + '\\*.*\" ' +  QCVSSWorkFolder.replace("\\\\", "\\") + "\\BuildScript" 
-     bat "if not exist " +  QCVSSWorkFolder.replace("\\\\", "\\") + "\\BuildScript\\DBBackup" + " mkdir " +  QCVSSWorkFolder.replace("\\\\", "\\") + "\\BuildScript\\DBBackup" 
-     bat "if  exist " +  QCVSSWorkFolder.replace("\\\\", "\\") + "\\BuildScript\\DBBackup\qcommission.bak" + " del " +  QCVSSWorkFolder.replace("\\\\", "\\") + "\\BuildScript\\DBBackup\qcommission.bak" 
+    echo "if not exist " +  QCVSSWorkFolder.replace("\\\\", "\\") + "\\BuildScript\\DBBackup" + " mkdir " +  QCVSSWorkFolder.replace("\\\\", "\\") + "\\BuildScript\\DBBackup"  
+    bat "if not exist " +  QCVSSWorkFolder.replace("\\\\", "\\") + "\\BuildScript\\DBBackup" + " mkdir " +  QCVSSWorkFolder.replace("\\\\", "\\") + "\\BuildScript\\DBBackup" 
+     echo "if  exist " +  QCVSSWorkFolder.replace("\\\\", "\\") + "\\BuildScript\\DBBackup\qcommission.bak" + " del " +  QCVSSWorkFolder.replace("\\\\", "\\") + "\\BuildScript\\DBBackup\qcommission.bak" 
      
      bat "copy \"" + QCommDBPath + '\\Qcommission*.*\" ' +  QCVSSWorkFolder.replace("\\\\", "\\") + "\\BuildScript\\DBBackup\" 
      bat " ren " +  QCVSSWorkFolder.replace("\\\\", "\\") + "\\BuildScript\\DBBackup\qcommission*.* " + +  QCVSSWorkFolder.replace("\\\\", "\\") + "\\BuildScript\\DBBackup\qcommission.bak"  
