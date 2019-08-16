@@ -27,9 +27,9 @@ BEGIN
         SET @sqlstr =  @sqlstr +'MAXSIZE = 25MB,'
         SET @sqlstr =  @sqlstr +'FILEGROWTH = 5MB'
         SET @sqlstr =  @sqlstr +');'
-        -- Print (@sqlstr) -- Print first if you want to see the output
+        Print (@sqlstr) -- Print first if you want to see the output
         EXEC (@sqlstr);
-        Print 'Datbaase '+@database_name +' has been created using default data and log location in the server configuration!!'
+        Print 'Datbaase '+@SQLDB +' has been created using default data and log location in the server configuration!!'
         Print 'Data file location = '+@file_name_d+@SQLDB+'.mdf';
         Print 'Log file location = '+@file_name_l+@SQLDB+'.ldf';
    
