@@ -7,7 +7,7 @@ DECLARE @file_name_l nvarchar(200) = CONVERT(sysname, SERVERPROPERTY('InstanceDe
 
 set @BackupFileName = @SQLDB + '.bak'
 
-IF  NOT EXISTS (SELECT * FROM sys.databases WHERE name = N'@SQLDB')
+IF  NOT EXISTS (SELECT * FROM sys.databases WHERE name = @SQLDB)
 BEGIN
 
  
