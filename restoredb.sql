@@ -5,7 +5,7 @@ Declare @LDFFileLogicalName varchar(max)
 Declare @MDFFileName varchar(max)
 Declare @LDFFileName varchar(max)
 Declare @BackupFileName varchar(max)
-set @MDGFileLocicalName =  @SQLDB + "MDF"
+set @MDFFileLocicalName =  @SQLDB + "MDF"
 set @LDFFileLogicalName =  @SQLDB + "LDF"
 
 set @MDGFileName =  @SQLDB + ".MDF"
@@ -18,7 +18,7 @@ BEGIN
     
    CREATE DATABASE @SQLDB
    ON
-   ( NAME = @MDGFileLocicalName,  
+   ( NAME = @MDFFileLocicalName,  
        FILENAME = @MDFFileName ,
        SIZE = 10,
        MAXSIZE = 50,
@@ -37,7 +37,7 @@ ROLLBACK IMMEDIATE
 --$(FTPPath)
 ----Restore Database
 --RESTORE DATABASE QCBuild FROM DISK = @BackupFile WITH replace 
-SET @SQL_SCRIPT = 'RESTORE DATABASE QCommission FROM DISK = '''+ @FTPPath + '''\''' + BackupFileName + ''' + ' WITH REPLACE'
+SET @SQL_SCRIPT = 'RESTORE DATABASE QCommission FROM DISK = '''+ @FTPPath + '''\''' + BackupFileName + ' WITH REPLACE'
 --SET @SQL_SCRIPT = 'RESTORE DATABASE QCBuild FROM DISK = ''' + @FTPPath + '\Qcommission.bak'' WITH replace;'
 --SET @SQL_SCRIPT = 'RESTORE DATABASE QCBuild FROM DISK = ''' + ''' WITH replace;'
 --SET @SQL_SCRIPT = 'RESTORE DATABASE QCBuild FROM DISK = ''' + QUOTENAME(@FTPPath + '\Qcommission.bak') +  'WITH replace;'
