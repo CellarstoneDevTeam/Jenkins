@@ -19,7 +19,7 @@ node
           def QCVSSWorkFolder = env.QCVSSWorkFolder
 
           bat '''
-          "'''+ MSBuildPath +  '''" ''' +  QCVSSWorkFolder.replace("\\\\", "\\") + "\\BuildScript" +'\\BuildWeb.msbuild'  +  ''' /t:''' + Target + 
+          "'''+ MSBuildPath +  '''" ''' +  QCVSSWorkFolder.replace("\\\\", "\\") + "\\BuildScript" +'\\RunSQL.msbuild'  +  ''' /t:''' + Target + 
           ''' /p:SQLDatasource=''' + SQLDatasource +
           ''' /p:SQLUserName=''' + SQLUserName +     
           ''' /p:SQLPassword=''' + SQLPassword +              
