@@ -1,5 +1,5 @@
 Declare @SQL_SCRIPT varchar(max)
-Declare @MDFFileLogicalName varchar(max)
+Declare @MDFFileLocicalName varchar(max)
 Declare @LDFFileLogicalName varchar(max)
 
 Declare @MDFFileName varchar(max)
@@ -8,7 +8,7 @@ Declare @BackupFileName varchar(max)
 set @MDFFileLocicalName =  @SQLDB + "MDF"
 set @LDFFileLogicalName =  @SQLDB + "LDF"
 
-set @MDGFileName =  @SQLDB + ".MDF"
+set @MDFFileName =  @SQLDB + ".MDF"
 set @LDFFileName =  @SQLDB + ".LDF"
 
 set @BackupFileName = SQLDB + ".bak"
