@@ -12,7 +12,7 @@ set @MDFFileName =  @SQLDB + '.MDF'
 set @LDFFileName =  @SQLDB + '.LDF'
 
 set @BackupFileName = SQLDB + '.bak'
-
+return
 IF  NOT EXISTS (SELECT * FROM sys.databases WHERE name = N'@SQLDB')
 BEGIN
     
