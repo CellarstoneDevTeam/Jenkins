@@ -49,7 +49,7 @@
 	    <Message Text="QCOMM DB Restore" />	
 	    <Message Text ="$(FTPFolder)" />
 	     <Message Text ="$(SQLDataSource)" />
-   	   <MSBuild.ExtensionPack.SqlServer.SqlExecute TaskAction="Execute" Files="@(SQLFiles)" ConnectionString="Data Source=$(SQLDataSource);Initial Catalog=$(SQLDB);Uid=$(SQLUserName);Pwd=$(SQLPassword)" Parameters="@(Variable)" />	    
+   	   <MSBuild.ExtensionPack.SqlServer.SqlExecute TaskAction="Execute" Files="@(SQLFiles)" ConnectionString="Data Source=$(SQLDataSource);Initial Catalog=;Uid=$(SQLUserName);Pwd=$(SQLPassword)" Parameters="@(Variable)" />	    
     </Target>
     <Target Name="ValidationQuery">
         <MSBuild.ExtensionPack.SqlServer.SqlExecute TaskAction="ExecuteReader" Sql="Select * from sys.tables" ConnectionString="Data Source=$(SQLDataSource);Initial Catalog=$(SQLDB);Uid=$(SQLUserName);Pwd=$(SQLPassword)" Parameters="@(Variable)" > 
