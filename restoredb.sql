@@ -34,9 +34,10 @@ BEGIN
         Print 'Log file location = '+@file_name_l+@SQLDB+'.ldf';
    
 END
-ALTER DATABASE [@SQLDB]
-SET SINGLE_USER WITH
-ROLLBACK IMMEDIATE
+set @sqlstr = 'ALTER DATABASE +' '+@SQLDB+' '
+SET @sqlstr =  @sqlstr +'SET SINGLE_USER WITH '
+SET @sqlstr =  @sqlstr +'ROLLBACK IMMEDIATE'
+EXEC (@sqlstr);
 --$(FTPPath)
 ----Restore Database
 --RESTORE DATABASE QCBuild FROM DISK = @BackupFile WITH replace 
