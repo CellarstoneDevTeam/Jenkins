@@ -5,6 +5,7 @@ Declare @LDFFileLogicalName varchar(max)
 Declare @MDFFileName varchar(max)
 Declare @LDFFileName varchar(max)
 Declare @BackupFileName varchar(max)
+return
 set @MDFFileLocicalName =  @SQLDB + 'MDF'
 set @LDFFileLogicalName =  @SQLDB + 'LDF'
 
@@ -12,7 +13,7 @@ set @MDFFileName =  @SQLDB + '.MDF'
 set @LDFFileName =  @SQLDB + '.LDF'
 
 set @BackupFileName = SQLDB + '.bak'
-return
+
 IF  NOT EXISTS (SELECT * FROM sys.databases WHERE name = N'@SQLDB')
 BEGIN
     
