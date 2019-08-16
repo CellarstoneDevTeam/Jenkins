@@ -12,21 +12,21 @@ set @LDFFileLogicalName =  @SQLDB + 'LDF'
 set @MDFFileName =  @SQLDB + '.MDF'
 set @LDFFileName =  @SQLDB + '.LDF'
 
-set @BackupFileName = SQLDB + '.bak'
+set @BackupFileName = @SQLDB + '.bak'
 
 IF  NOT EXISTS (SELECT * FROM sys.databases WHERE name = N'@SQLDB')
 BEGIN
     
-   CREATE DATABASE @SQLDB
+   CREATE DATABASE [@SQLDB]
    ON
-   ( NAME = @MDFFileLocicalName,  
-       FILENAME = @MDFFileName ,
+   ( NAME = [@MDFFileLocicalName],  
+       FILENAME = [@MDFFileName] ,
        SIZE = 10,
        MAXSIZE = 50,
        FILEGROWTH = 5 )  
    LOG ON
-   ( NAME = @LDFFileLogicalName,  
-       FILENAME = @LDFFileName,
+   ( NAME = [@LDFFileLogicalName],  
+       FILENAME = [@LDFFileName],
        SIZE = 5,
        MAXSIZE = 25,
        FILEGROWTH = 5 )
