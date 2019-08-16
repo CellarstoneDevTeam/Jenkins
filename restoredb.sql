@@ -28,7 +28,7 @@ BEGIN
         SET @sqlstr =  @sqlstr +'FILEGROWTH = 5MB'
         SET @sqlstr =  @sqlstr +');'
         Print (@sqlstr) -- Print first if you want to see the output
-        EXEC (@sqlstr);
+        --EXEC (@sqlstr);
         Print 'Datbaase '+@SQLDB +' has been created using default data and log location in the server configuration!!'
         Print 'Data file location = '+@file_name_d+@SQLDB+'.mdf';
         Print 'Log file location = '+@file_name_l+@SQLDB+'.ldf';
@@ -37,7 +37,8 @@ END
 set @sqlstr = 'ALTER DATABASE '+ @SQLDB+' '
 SET @sqlstr =  @sqlstr +'SET SINGLE_USER WITH '
 SET @sqlstr =  @sqlstr +'ROLLBACK IMMEDIATE'
-EXEC (@sqlstr);
+--EXEC (@sqlstr);
+Print (@sqlstr);                                                                     
 --$(FTPPath)
 ----Restore Database
 --RESTORE DATABASE QCBuild FROM DISK = @BackupFile WITH replace 
@@ -56,6 +57,7 @@ mode.
 If error occurs please execute following command it will convert
 database in multi user.*/
 set @sqlstr = 'ALTER DATABASE ' + @SQLDB  + ' SET MULTI_USER'
-EXEC (@sqlstr);                                                                   
+--EXEC (@sqlstr);                                                                   
+print (@sqlstr);                                                                     
 GO
 
