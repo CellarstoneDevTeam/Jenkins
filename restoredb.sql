@@ -1,4 +1,5 @@
 Declare @SQL_SCRIPT varchar(max)
+declare @sqlstr varchar(max)
 
 DECLARE @file_name_d nvarchar(200) = CONVERT(sysname, SERVERPROPERTY('InstanceDefaultDataPath'))
 DECLARE @file_name_l nvarchar(200) = CONVERT(sysname, SERVERPROPERTY('InstanceDefaultLogPath'))
@@ -20,7 +21,7 @@ BEGIN
         SET @sqlstr =  @sqlstr +'FILEGROWTH = 5' 
         SET @sqlstr =  @sqlstr +')'
         SET @sqlstr =  @sqlstr +'LOG ON'
-        SET @sqlstr =  @sqlstr +'(   NAME = '+' '+@database_name+'_log,'
+        SET @sqlstr =  @sqlstr +'(   NAME = '+' '+@SQLDB+'_log,'
         SET @sqlstr =  @sqlstr +'FILENAME = '+''''+@file_name_l+''+@SQLDB+'.ldf'','
         SET @sqlstr =  @sqlstr +'SIZE = 5MB,'
         SET @sqlstr =  @sqlstr +'MAXSIZE = 25MB,'
@@ -29,8 +30,8 @@ BEGIN
         -- Print (@sqlstr) -- Print first if you want to see the output
         EXEC (@sqlstr);
         Print 'Datbaase '+@database_name +' has been created using default data and log location in the server configuration!!'
-        Print 'Data file location = '+@file_name_d+@database_name+'.mdf';
-        Print 'Log file location = '+@file_name_l+@database_name+'.ldf';
+        Print 'Data file location = '+@file_name_d+@SQLDB+'.mdf';
+        Print 'Log file location = '+@file_name_l+@SQLDB+'.ldf';
    
 END
 ALTER DATABASE [@SQLDB]
