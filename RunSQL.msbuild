@@ -27,6 +27,9 @@
 		<name>@SQLDB</name>
 		<value>$(SQLDB)</value>
         </Variable>
+    </ItemGroup>
+    <ItemGroup>
+        <SQLFiles Include="$(MSBuildProjectDirectory)\*.SQL"/>
     </ItemGroup>	
     <!-- Specify Targets -->
     <!-- FTP DBCopy-->
