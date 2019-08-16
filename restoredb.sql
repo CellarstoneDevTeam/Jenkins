@@ -1,6 +1,6 @@
 Declare @SQL_SCRIPT varchar(max)
 declare @sqlstr varchar(max)
-
+declare @BackupFileName varchar(max)
 DECLARE @file_name_d nvarchar(200) = CONVERT(sysname, SERVERPROPERTY('InstanceDefaultDataPath'))
 DECLARE @file_name_l nvarchar(200) = CONVERT(sysname, SERVERPROPERTY('InstanceDefaultLogPath'))
 
@@ -34,7 +34,7 @@ BEGIN
         Print 'Log file location = '+@file_name_l+@SQLDB+'.ldf';
    
 END
-set @sqlstr = 'ALTER DATABASE +' '+@SQLDB+' '
+set @sqlstr = 'ALTER DATABASE '+ @SQLDB+' '
 SET @sqlstr =  @sqlstr +'SET SINGLE_USER WITH '
 SET @sqlstr =  @sqlstr +'ROLLBACK IMMEDIATE'
 EXEC (@sqlstr);
