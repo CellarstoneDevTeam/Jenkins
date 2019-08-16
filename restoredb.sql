@@ -46,7 +46,8 @@ SET @SQL_SCRIPT = 'RESTORE DATABASE ' + @SQLDB + ' FROM DISK = '''+ @FTPPath + '
 --SET @SQL_SCRIPT = 'RESTORE DATABASE QCBuild FROM DISK = ''' + @FTPPath + '\Qcommission.bak'' WITH replace;'
 --SET @SQL_SCRIPT = 'RESTORE DATABASE QCBuild FROM DISK = ''' + ''' WITH replace;'
 --SET @SQL_SCRIPT = 'RESTORE DATABASE QCBuild FROM DISK = ''' + QUOTENAME(@FTPPath + '\Qcommission.bak') +  'WITH replace;'
-EXECUTE (@SQL_SCRIPT)
+--EXECUTE (@SQL_SCRIPT)
+print (@SQL_SCRIPT)
 /*use qcbuild
 delete from buildlog
 insert into buildlog (logtext) values (@SQL_SCRIPT)*/
