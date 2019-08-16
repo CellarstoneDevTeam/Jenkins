@@ -42,7 +42,7 @@ Print (@sqlstr);
 --$(FTPPath)
 ----Restore Database
 --RESTORE DATABASE QCBuild FROM DISK = @BackupFile WITH replace 
-SET @SQL_SCRIPT = 'RESTORE DATABASE ' + @SQLDB + ' FROM DISK = '''+ @FTPPath + '\' + @BackupFileName + ''' WITH REPLACE'
+SET @SQL_SCRIPT = 'RESTORE DATABASE ' + @SQLDB + ' FROM DISK = '''+ @FTPPath + '\\' + @BackupFileName + ''' WITH REPLACE'
 --SET @SQL_SCRIPT = 'RESTORE DATABASE QCBuild FROM DISK = ''' + @FTPPath + '\Qcommission.bak'' WITH replace;'
 --SET @SQL_SCRIPT = 'RESTORE DATABASE QCBuild FROM DISK = ''' + ''' WITH replace;'
 --SET @SQL_SCRIPT = 'RESTORE DATABASE QCBuild FROM DISK = ''' + QUOTENAME(@FTPPath + '\Qcommission.bak') +  'WITH replace;'
