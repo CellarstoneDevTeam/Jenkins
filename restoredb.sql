@@ -4,7 +4,7 @@ declare @BackupFileName varchar(max)
 DECLARE @file_name_d nvarchar(200) = CONVERT(sysname, SERVERPROPERTY('InstanceDefaultDataPath'))
 DECLARE @file_name_l nvarchar(200) = CONVERT(sysname, SERVERPROPERTY('InstanceDefaultLogPath'))
 
-set @BackupFileName =   @FTPPath\\@SQLDB\\.bak
+set @BackupFileName =  concat(@FTPPath,'\\',@SQLDB,'\\','.bak')
 
 IF  NOT EXISTS (SELECT * FROM sys.databases WHERE name = '@SQLDB' )
 BEGIN
