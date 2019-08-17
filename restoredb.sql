@@ -13,7 +13,7 @@ SET @sqlstr =  'IF  NOT EXISTS (SELECT * FROM sys.databases WHERE name =''' +@SQ
         SET @sqlstr =  @sqlstr +'ON'
         SET @sqlstr =  @sqlstr +'('    
         SET @sqlstr =  @sqlstr +'NAME = '+' '''+ @SQLDB+'''_dat,'
-        SET @sqlstr =  @sqlstr +'FILENAME = '+''''+@file_name_d+''''+@SQLDB+'''.mdf'','
+        SET @sqlstr =  @sqlstr +'FILENAME = '+''''+@file_name_d+''''+@SQLDB+'''.mdf''','
         SET @sqlstr =  @sqlstr +'SIZE = 10,'
         SET @sqlstr =  @sqlstr +'MAXSIZE = 50,'
         SET @sqlstr =  @sqlstr +'FILEGROWTH = 5' 
