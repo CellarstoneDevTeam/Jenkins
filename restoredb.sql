@@ -11,7 +11,7 @@ set @BackupFileName = @SQLDB + '.bak'
 --IF  NOT EXISTS (SELECT '1' FROM sys.databases WHERE name = ''' +@SQLDB + '''')
 --BEGIN
 SET @sqlstr =  'IF  NOT EXISTS (SELECT * FROM sys.databases WHERE name =''' +@SQLDB+ ''''
-        SET @sqlstr =  @sqlstr + ' CREATE DATABASE'+' '''+@SQLDB+''''
+      /*  SET @sqlstr =  @sqlstr + ' CREATE DATABASE'+' '+@SQLDB+' '
         SET @sqlstr =  @sqlstr +'ON'
         SET @sqlstr =  @sqlstr +'('    
         SET @sqlstr =  @sqlstr +'NAME = '+' '+@SQLDB+'_dat,'
@@ -27,7 +27,7 @@ SET @sqlstr =  'IF  NOT EXISTS (SELECT * FROM sys.databases WHERE name =''' +@SQ
         SET @sqlstr =  @sqlstr +'MAXSIZE = 25MB,'
         SET @sqlstr =  @sqlstr +'FILEGROWTH = 5MB'
         SET @sqlstr =  @sqlstr +');'
-       
+       */
         Print (@sqlstr) -- Print first if you want to see the output
         --EXEC (@sqlstr);
         Print 'Datbaase '+@SQLDB +' has been created using default data and log location in the server configuration!!'
