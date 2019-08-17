@@ -9,7 +9,7 @@ set @BackupFileName =   '''+ @SQLDB + ''' + ''' + .bak'''
 --IF  NOT EXISTS (SELECT '1' FROM sys.databases WHERE name = ''' +@SQLDB + '''')
 --BEGIN
 SET @sqlstr =  'IF  NOT EXISTS (SELECT * FROM sys.databases WHERE name ='''' +@SQLDB+ '''''
-   SET @sqlstr =  @sqlstr + ' CREATE DATABASE'+ ''''+@SQLDB+''''
+   SET @sqlstr =  @sqlstr + ' CREATE DATABASE'+ '''' + @SQLDB+ '''''
 
                                                                      
 --END
