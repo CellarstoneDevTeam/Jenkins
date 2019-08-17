@@ -60,6 +60,6 @@ If error occurs please execute following command it will convert
 database in multi user.*/
 --set @sqlstr = 'ALTER DATABASE ' + @SQLDB  + ' SET MULTI_USER'
 --EXEC (@sqlstr);                                                                   
-print (@sqlstr);   */                                                                  */
+print (@sqlstr); */                                                                   
 GO
 
