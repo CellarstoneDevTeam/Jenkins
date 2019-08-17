@@ -10,27 +10,6 @@ set @BackupFileName =   '''+ @SQLDB + ''' + ''' + .bak'''
 --BEGIN
 SET @sqlstr =  'IF  NOT EXISTS (SELECT * FROM sys.databases WHERE name =''' +@SQLDB+ ''''
       SET @sqlstr =  @sqlstr + ' CREATE DATABASE'+' '''+@SQLDB+''' 
-        SET @sqlstr =  @sqlstr +'ON'
-        SET @sqlstr =  @sqlstr +'('    
-        SET @sqlstr =  @sqlstr +'NAME = '+' '''+ @SQLDB+'''_dat,'
-        SET @sqlstr =  @sqlstr +'FILENAME = '+''''+@file_name_d+''''+@SQLDB+'''.mdf''','
-        SET @sqlstr =  @sqlstr +'SIZE = 10,'
-        SET @sqlstr =  @sqlstr +'MAXSIZE = 50,'
-        SET @sqlstr =  @sqlstr +'FILEGROWTH = 5' 
-        SET @sqlstr =  @sqlstr +')'
-        SET @sqlstr =  @sqlstr +'LOG ON'
-        SET @sqlstr =  @sqlstr +'(   NAME = '+' '''+@SQLDB+'''_log,'
-        SET @sqlstr =  @sqlstr +'FILENAME = '+''''+@file_name_l+''''+@SQLDB+'''.ldf'','
-        SET @sqlstr =  @sqlstr +'SIZE = 5MB,'
-        SET @sqlstr =  @sqlstr +'MAXSIZE = 25MB,'
-        SET @sqlstr =  @sqlstr +'FILEGROWTH = 5MB'
-        SET @sqlstr =  @sqlstr +');'
-       
-        Print (@sqlstr) -- Print first if you want to see the output
-        --EXEC (@sqlstr);
-        Print 'Datbaase '+@SQLDB +' has been created using default data and log location in the server configuration!!'
-        Print 'Data file location = '+@file_name_d+@SQLDB+'.mdf';
-        Print 'Log file location = '+@file_name_l+@SQLDB+'.ldf';
   
 --END
 /*set @sqlstr = 'ALTER DATABASE '+ @SQLDB+' '
