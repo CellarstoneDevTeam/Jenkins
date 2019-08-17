@@ -6,16 +6,12 @@ DECLARE @file_name_l nvarchar(200) = CONVERT(sysname, SERVERPROPERTY('InstanceDe
 
 set @BackupFileName =   '''+ @SQLDB + ''' + ''' + .bak'''
 
---IF  NOT EXISTS (SELECT '1' FROM sys.databases WHERE name = ''' +@SQLDB + '''')
---BEGIN
---SET @sqlstr =  'IF  NOT EXISTS (SELECT * FROM sys.databases WHERE name ='''' +@SQLDB+ '''''
-   --SET @sqlstr =  @sqlstr + ' CREATE DATABASE ' + '''' +@SQLDB+ '''''
+IF  NOT EXISTS (SELECT * FROM sys.databases WHERE name = @SQLDB )
+BEGIN
     CREATE DATABASE  @SQLDB
-                                                                     
+END
 
-                                                                     
---END
-/*set @sqlstr = 'ALTER DATABASE '+ @SQLDB+' '
+                                                                     /*set @sqlstr = 'ALTER DATABASE '+ @SQLDB+' '
 SET @sqlstr =  @sqlstr +'SET SINGLE_USER WITH '
 SET @sqlstr =  @sqlstr +'ROLLBACK IMMEDIATE'
 --EXEC (@sqlstr);
