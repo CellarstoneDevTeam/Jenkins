@@ -7,7 +7,7 @@ set @BackupFileName = '@SQLDB' + '.bak'''
 
                 drop database @SQLDB;                                                   
     CREATE DATABASE  @SQLDB;
-SET @SQL_SCRIPT = 'RESTORE DATABASE ' + '@SQLDB' + ' FROM DISK = '''+ @FTPPath + '\' + @BackupFileName + ''' WITH REPLACE'
+SET @SQL_SCRIPT = 'RESTORE DATABASE ' + '@SQLDB' + ' FROM DISK = '''+ @FTPPath + '\' + @BackupFileName + ' WITH REPLACE'
                                                                      
                                     use qcbuild
 delete from buildlog
