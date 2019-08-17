@@ -4,7 +4,7 @@ declare @BackupFileName varchar(max)
 DECLARE @file_name_d nvarchar(200) = CONVERT(sysname, SERVERPROPERTY('InstanceDefaultDataPath'))
 DECLARE @file_name_l nvarchar(200) = CONVERT(sysname, SERVERPROPERTY('InstanceDefaultLogPath'))
 
---set @BackupFileName =  concat('''',@FTPPath,'\\''',@SQLDB,'''.bak','''')
+set @BackupFileName =  concat('''',@FTPPath,'\\''',@SQLDB,'''.bak','''')
 
 IF  NOT EXISTS (SELECT * FROM sys.databases WHERE name = '@SQLDB' )
 BEGIN
@@ -18,9 +18,11 @@ SET @sqlstr =  @sqlstr +'ROLLBACK IMMEDIATE'
 Print (@sqlstr);                                                                     
 --$(FTPPath)
 ----Restore Database
---RESTORE DATABASE QCBuild FROM DISK = @BackupFile WITH replace 
+--RESTORE DATABASE QCBuild FROM DISK = @BackupFile WITH replace */
 SET @SQL_SCRIPT = 'RESTORE DATABASE ' + @SQLDB + ' FROM DISK = '''+ @FTPPath + '\\' + @BackupFileName + ''' WITH REPLACE'
---SET @SQL_SCRIPT = 'RESTORE DATABASE QCBuild FROM DISK = ''' + @FTPPath + '\Qcommission.bak'' WITH replace;'
+                                                                     
+execute (@sql_script)
+/*--SET @SQL_SCRIPT = 'RESTORE DATABASE QCBuild FROM DISK = ''' + @FTPPath + '\Qcommission.bak'' WITH replace;'
 --SET @SQL_SCRIPT = 'RESTORE DATABASE QCBuild FROM DISK = ''' + ''' WITH replace;'
 --SET @SQL_SCRIPT = 'RESTORE DATABASE QCBuild FROM DISK = ''' + QUOTENAME(@FTPPath + '\Qcommission.bak') +  'WITH replace;'
 --EXECUTE (@SQL_SCRIPT)
