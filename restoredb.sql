@@ -4,12 +4,13 @@ declare @BackupFileName varchar(max)
 DECLARE @file_name_d nvarchar(200) = CONVERT(sysname, SERVERPROPERTY('InstanceDefaultDataPath'))
 DECLARE @file_name_l nvarchar(200) = CONVERT(sysname, SERVERPROPERTY('InstanceDefaultLogPath'))
 
-set @BackupFileName =  concat('''',@FTPPath,'\\''',@SQLDB,'''.bak','''')
+/*set @BackupFileName =  concat('''',@FTPPath,'\\''',@SQLDB,'''.bak','''')
 
-IF  NOT EXISTS (SELECT * FROM sys.databases WHERE name = '@SQLDB' )
-BEGIN
+IF  NOT EXISTS (SELECT * FROM sys.databases WHERE name = '@SQLDB' )*/
+--BEGIN
+  drop database @sqldb                                                                   
     CREATE DATABASE  @SQLDB
-END
+--END
 --RESTORE DATABASE QCBuild FROM DISK = '@FTPPath\@SQLDB.bak' WITH replace 
                                                                      /*set @sqlstr = 'ALTER DATABASE '+ @SQLDB+' '
 SET @sqlstr =  @sqlstr +'SET SINGLE_USER WITH '
