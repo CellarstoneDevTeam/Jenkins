@@ -5,15 +5,25 @@ DECLARE @file_name_d nvarchar(200) = CONVERT(sysname, SERVERPROPERTY('InstanceDe
 DECLARE @file_name_l nvarchar(200) = CONVERT(sysname, SERVERPROPERTY('InstanceDefaultLogPath'))
 set @BackupFileName = '@SQLDB' + '.bak'''
 
-                drop database @SQLDB;                                                   
-    CREATE DATABASE  @SQLDB;
+set @sqlstr = 'ALTER DATABASE '+ @SQLDB+' '
+SET @sqlstr =  @sqlstr +'SET SINGLE_USER WITH '
+SET @sqlstr =  @sqlstr +'ROLLBACK IMMEDIATE'
+EXEC (@sqlstr);
+
+drop database @SQLDB;                                                   
+CREATE DATABASE  @SQLDB;
 SET @SQL_SCRIPT = 'RESTORE DATABASE ' + '@SQLDB' + ' FROM DISK = '''+ @FTPPath + '\' + @BackupFileName + ' WITH REPLACE'
                                                                      
-                                    use qcbuild
+use qcbuild
 delete from buildlog
 insert into buildlog (logtext) values (@SQL_SCRIPT)
 
 EXEC(@sql_script)
+
+set @sqlstr = 'ALTER DATABASE ' + @SQLDB  + ' SET MULTI_USER'
+EXEC (@sqlstr);                                                                   
+
+
 GO
 
 
