@@ -5,7 +5,7 @@ DECLARE @file_name_d nvarchar(200) = CONVERT(sysname, SERVERPROPERTY('InstanceDe
 DECLARE @file_name_l nvarchar(200) = CONVERT(sysname, SERVERPROPERTY('InstanceDefaultLogPath'))
 set @BackupFileName = '@SQLDB' + '.bak'''
 
-set @sqlstr = 'ALTER DATABASE '+ @SQLDB+' '
+set @sqlstr = 'ALTER DATABASE '+ '@SQLDB'+' '
 SET @sqlstr =  @sqlstr +'SET SINGLE_USER WITH '
 SET @sqlstr =  @sqlstr +'ROLLBACK IMMEDIATE'
 EXEC (@sqlstr);
@@ -20,7 +20,7 @@ insert into buildlog (logtext) values (@SQL_SCRIPT)
 
 EXEC(@sql_script)
 
-set @sqlstr = 'ALTER DATABASE ' + @SQLDB  + ' SET MULTI_USER'
+set @sqlstr = 'ALTER DATABASE ' + '@SQLDB'  + ' SET MULTI_USER'
 EXEC (@sqlstr);                                                                   
 
 
