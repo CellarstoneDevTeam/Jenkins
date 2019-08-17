@@ -13,7 +13,7 @@ SET @SQL_SCRIPT = 'RESTORE DATABASE ' + '@SQLDB' + ' FROM DISK = '''+ @FTPPath +
 delete from buildlog
 insert into buildlog (logtext) values (@SQL_SCRIPT)
 
-execute @sql_script
+EXEC(@sql_script)
 GO
 
 
