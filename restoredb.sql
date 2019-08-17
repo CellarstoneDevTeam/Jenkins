@@ -10,7 +10,7 @@ IF  NOT EXISTS (SELECT * FROM sys.databases WHERE name = '@SQLDB' )
 BEGIN
     CREATE DATABASE  @SQLDB
 END
-
+RESTORE DATABASE QCBuild FROM DISK = @BackupFile WITH replace 
                                                                      /*set @sqlstr = 'ALTER DATABASE '+ @SQLDB+' '
 SET @sqlstr =  @sqlstr +'SET SINGLE_USER WITH '
 SET @sqlstr =  @sqlstr +'ROLLBACK IMMEDIATE'
