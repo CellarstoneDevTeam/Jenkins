@@ -6,9 +6,9 @@ DECLARE @file_name_l nvarchar(200) = CONVERT(sysname, SERVERPROPERTY('InstanceDe
 
 set @BackupFileName =   '''+ @SQLDB + ''' + ''' + .bak'''
 
-IF  NOT EXISTS (SELECT '1' FROM sys.databases WHERE name = ''' +@SQLDB + '''')
-BEGIN
---SET @sqlstr =  'IF  NOT EXISTS (SELECT * FROM sys.databases WHERE name =''' +@SQLDB+ ''''
+--IF  NOT EXISTS (SELECT '1' FROM sys.databases WHERE name = ''' +@SQLDB + '''')
+--BEGIN
+SET @sqlstr =  'IF  NOT EXISTS (SELECT * FROM sys.databases WHERE name =''' +@SQLDB+ ''''
       SET @sqlstr =  @sqlstr + ' CREATE DATABASE'+' '+@SQLDB+' '
         SET @sqlstr =  @sqlstr +'ON'
         SET @sqlstr =  @sqlstr +'('    
@@ -32,7 +32,7 @@ BEGIN
         Print 'Data file location = '+@file_name_d+@SQLDB+'.mdf';
         Print 'Log file location = '+@file_name_l+@SQLDB+'.ldf';
   
-END
+--END
 /*set @sqlstr = 'ALTER DATABASE '+ @SQLDB+' '
 SET @sqlstr =  @sqlstr +'SET SINGLE_USER WITH '
 SET @sqlstr =  @sqlstr +'ROLLBACK IMMEDIATE'
