@@ -10,7 +10,7 @@ IF  NOT EXISTS (SELECT * FROM sys.databases WHERE name = '@SQLDB' )
 BEGIN
     CREATE DATABASE  @SQLDB
 END
-RESTORE DATABASE QCBuild FROM DISK = '@FTPPath\@SQLDB.bak' WITH replace 
+--RESTORE DATABASE QCBuild FROM DISK = '@FTPPath\@SQLDB.bak' WITH replace 
                                                                      /*set @sqlstr = 'ALTER DATABASE '+ @SQLDB+' '
 SET @sqlstr =  @sqlstr +'SET SINGLE_USER WITH '
 SET @sqlstr =  @sqlstr +'ROLLBACK IMMEDIATE'
@@ -21,15 +21,16 @@ Print (@sqlstr);
 --RESTORE DATABASE QCBuild FROM DISK = @BackupFile WITH replace */
 SET @SQL_SCRIPT = 'RESTORE DATABASE ' + @SQLDB + ' FROM DISK = '''+ @FTPPath + '\\' + @BackupFileName + ''' WITH REPLACE'
                                                                      
-execute (@sql_script)
+--execute (@sql_script)
 /*--SET @SQL_SCRIPT = 'RESTORE DATABASE QCBuild FROM DISK = ''' + @FTPPath + '\Qcommission.bak'' WITH replace;'
 --SET @SQL_SCRIPT = 'RESTORE DATABASE QCBuild FROM DISK = ''' + ''' WITH replace;'
 --SET @SQL_SCRIPT = 'RESTORE DATABASE QCBuild FROM DISK = ''' + QUOTENAME(@FTPPath + '\Qcommission.bak') +  'WITH replace;'
 --EXECUTE (@SQL_SCRIPT)
-print (@SQL_SCRIPT)
-/*use qcbuild
+print (@SQL_SCRIPT)*/
+
+                                    use qcbuild
 delete from buildlog
-insert into buildlog (logtext) values (@SQL_SCRIPT)*/
+insert into buildlog (logtext) values (@SQL_SCRIPT)
 
  
 /*If there is no error in statement before database will be in multiuser
