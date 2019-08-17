@@ -5,7 +5,7 @@ DECLARE @file_name_d nvarchar(200) = CONVERT(sysname, SERVERPROPERTY('InstanceDe
 DECLARE @file_name_l nvarchar(200) = CONVERT(sysname, SERVERPROPERTY('InstanceDefaultLogPath'))
 
 
-set @BackupFileName = @SQLDB + '.bak'
+--set @BackupFileName =  @SQLDB + '.bak'
 
 
 --IF  NOT EXISTS (SELECT '1' FROM sys.databases WHERE name = ''' +@SQLDB + '''')
