@@ -10,7 +10,7 @@ set @BackupFileName = @SQLDB + '.bak'
 IF  NOT EXISTS (SELECT * FROM sys.databases WHERE name = @SQLDB)
 BEGIN
 
- 
+ /*
         SET @sqlstr= 'CREATE DATABASE'+' '+@SQLDB+' '
         SET @sqlstr =  @sqlstr +'ON'
         SET @sqlstr =  @sqlstr +'('    
@@ -32,9 +32,9 @@ BEGIN
         Print 'Datbaase '+@SQLDB +' has been created using default data and log location in the server configuration!!'
         Print 'Data file location = '+@file_name_d+@SQLDB+'.mdf';
         Print 'Log file location = '+@file_name_l+@SQLDB+'.ldf';
-   
+   */
 END
-set @sqlstr = 'ALTER DATABASE '+ @SQLDB+' '
+/*set @sqlstr = 'ALTER DATABASE '+ @SQLDB+' '
 SET @sqlstr =  @sqlstr +'SET SINGLE_USER WITH '
 SET @sqlstr =  @sqlstr +'ROLLBACK IMMEDIATE'
 --EXEC (@sqlstr);
@@ -59,6 +59,6 @@ If error occurs please execute following command it will convert
 database in multi user.*/
 set @sqlstr = 'ALTER DATABASE ' + @SQLDB  + ' SET MULTI_USER'
 --EXEC (@sqlstr);                                                                   
-print (@sqlstr);                                                                     
+print (@sqlstr);   */                                                                  */
 GO
 
