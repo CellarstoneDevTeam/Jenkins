@@ -7,7 +7,7 @@ node
 
 
     def Target= "${params.Target}"
-
+    def ApplicationName= "${params.ApplicationName}"
     def SQLDB= "${params.SQLDB}"
 
     stage('Restore QCommDB')
@@ -41,6 +41,8 @@ node
           bat '''
 
           "'''+ MSBuildPath +  '''" ''' +  QCVSSWorkFolder.replace("\\\\", "\\") + "\\BuildScript" +'\\RunSQL.msbuild'  +  ''' /t:''' + Target + 
+
+          ''' /p:ApplicationName=''' + ApplicationName +
 
           ''' /p:SQLDatasource=''' + SQLDatasource +
 
