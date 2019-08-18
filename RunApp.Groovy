@@ -6,7 +6,7 @@ node
 
 
 
-    def Target= "ApplicationName"
+    def Target= "RunApp"
     def ApplicationName= "${params.ApplicationName}"
     def SQLDB= "${params.SQLDB}"
 
