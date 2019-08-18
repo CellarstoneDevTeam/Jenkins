@@ -68,7 +68,7 @@
             File="@(MyOutputFile)" >
             <Output
                 TaskParameter="Lines"
-                ItemName="ItemsFromFile"/>
+                ItemName="LinesFromFile"/>
         </ReadLinesFromFile>
   <Message Text="Current line : %(LinesFromFile.Identity)" />
   <Message Text="===================================" />
