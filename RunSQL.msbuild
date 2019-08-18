@@ -36,7 +36,12 @@
     </ItemGroup>
     <ItemGroup>
         <SQLFiles Include="$(MSBuildProjectDirectory)\*.SQL"/>
-    </ItemGroup>	
+    </ItemGroup>
+    <ItemGroup>
+        <SQLQuery Include="$(MSBuildProjectDirectory)\*.QRY/>
+    </ItemGroup>
+	
+	
     <!-- Specify Targets -->
     <!-- FTP DBCopy-->
     <Target Name="FTPDBCopy">      
@@ -61,7 +66,10 @@
         <MSBuild.ExtensionPack.SqlServer.SqlExecute TaskAction="ExecuteReader" Sql="Select * from sys.tables" ConnectionString="Data Source=$(SQLDataSource);Initial Catalog=$(SQLDB);Uid=$(SQLUserName);Pwd=$(SQLPassword)" Parameters="@(Variable)" > 
             <Output ItemName="RResult" TaskParameter="ReaderResult"/> 
         </MSBuild.ExtensionPack.SqlServer.SqlExecute> 
-        <Message Text="%(RResult.Identity) - %(RResult.object_id)"/> 
+        <MSBuild.ExtensionPack.SqlServer.SqlExecute TaskAction="ExecuteReader" Files="@(SQLQuery)" ConnectionString="Data Source=$(SQLDataSource);Initial Catalog=$(SQLDB);Uid=$(SQLUserName);Pwd=$(SQLPassword)" Parameters="@(Variable)" > 
+            <Output ItemName="RResult" TaskParameter="ReaderResult"/> 
+        </MSBuild.ExtensionPack.SqlServer.SqlExecute> 	    
+        <Message Text="%(RResult.Identity) | %(RResult.category)  | %(RResult.TableName) | %(RResult.ColumnName) | %(RResult.Comments)"/> 
     </Target>
 <Target Name="ReadFromFile">
         <ReadLinesFromFile
