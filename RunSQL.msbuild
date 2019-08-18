@@ -66,12 +66,15 @@
 <!--  <MSBuild.ExtensionPack.SqlServer.SqlExecute TaskAction="ExecuteReader" Sql="Select * from sys.tables" ConnectionString="Data Source=$(SQLDataSource);Initial Catalog=$(SQLDB);Uid=$(SQLUserName);Pwd=$(SQLPassword)" Parameters="@(Variable)" > 
             <Output ItemName="RResult" TaskParameter="ReaderResult"/> 
         </MSBuild.ExtensionPack.SqlServer.SqlExecute> -->
+	
+	    
         <MSBuild.ExtensionPack.SqlServer.SqlExecute TaskAction="ExecuteScalar" 
-		SQL="SELECT 'Duplicate columns in dicttionary Table' Category,page_table_name TableName, attrib_ID ColumnName,'' Comments FROM sy_obj_att INNER JOIN SY_PG ON SY_PG.object_id = sy_obj_att.object_id GROUP BY page_table_name, attrib_ID HAVING COUNT(*)>1 ORDER BY page_table_name, attrib_ID " 
+		SQL="SELECT page_table_name TableName, attrib_ID ColumnName,'' Comments FROM sy_obj_att INNER JOIN SY_PG ON SY_PG.object_id = sy_obj_att.object_id GROUP BY page_table_name, attrib_ID HAVING COUNT(*)>1 ORDER BY page_table_name, attrib_ID " 
 		ConnectionString="Data Source=$(SQLDataSource);Initial Catalog=$(SQLDB);Uid=$(SQLUserName);Pwd=$(SQLPassword)" Parameters="@(Variable)" > 
             <Output PropertyName="VResult" TaskParameter="ScalarResult"/> 
         </MSBuild.ExtensionPack.SqlServer.SqlExecute> 	    
         <Message Text="$(VResult)"/> 
+	    
     </Target>
 <Target Name="ReadFromFile">
         <ReadLinesFromFile
