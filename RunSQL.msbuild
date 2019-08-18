@@ -19,7 +19,7 @@
 	    <ApplicationName>bat</ApplicationName>
     </PropertyGroup>
     <ItemGroup>
-        <MyOutputFile Include="Items.txt"/>
+        <MyOutputFile Include="$(ApplicationName).txt"/>
     </ItemGroup>
     <Import Project="$(MSBuildExtensionsPath)\MSBuildCommunityTasks\MSBuild.Community.Tasks.Targets"/>
     <Import Project="$(TPath)"/>
@@ -76,7 +76,7 @@
 
 
 <Target Name="RunApp">
-        <Exec Command="$(ApplicationName) > items.txt" />
+        <Exec Command="$(ApplicationName) > $(ApplicationName).txt" />
         <Exec Command="echo it is a test!" />
         <CallTarget Targets="ReadFromFile"/>
 	
