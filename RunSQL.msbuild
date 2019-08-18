@@ -71,7 +71,7 @@
 		ConnectionString="Data Source=$(SQLDataSource);Initial Catalog=$(SQLDB);Uid=$(SQLUserName);Pwd=$(SQLPassword)" Parameters="@(Variable)" > 
             <Output PropertyName="VResult" TaskParameter="ExecuteScalar"/> 
         </MSBuild.ExtensionPack.SqlServer.SqlExecute> 	    
-        <Message Text="$(ScResult)"/> 
+        <Message Text="$(VResult)"/> 
     </Target>
 <Target Name="ReadFromFile">
         <ReadLinesFromFile
