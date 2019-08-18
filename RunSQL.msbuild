@@ -38,7 +38,7 @@
         <SQLFiles Include="$(MSBuildProjectDirectory)\*.SQL"/>
     </ItemGroup>
     <ItemGroup>
-        <SQLQuery Include="$(MSBuildProjectDirectory)\*.QRY/>
+        <SQLQuery Include="$(MSBuildProjectDirectory)\*.QRY"/>
     </ItemGroup>
 	
 	
