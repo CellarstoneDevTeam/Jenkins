@@ -63,13 +63,13 @@
    	   <MSBuild.ExtensionPack.SqlServer.SqlExecute TaskAction="Execute" Files="@(SQLFiles)" ConnectionString="Data Source=$(SQLDataSource);Initial Catalog=;Uid=$(SQLUserName);Pwd=$(SQLPassword)" Parameters="@(Variable)" />	    
     </Target>
     <Target Name="ValidationQuery">
-        <MSBuild.ExtensionPack.SqlServer.SqlExecute TaskAction="ExecuteReader" Sql="Select * from sys.tables" ConnectionString="Data Source=$(SQLDataSource);Initial Catalog=$(SQLDB);Uid=$(SQLUserName);Pwd=$(SQLPassword)" Parameters="@(Variable)" > 
+<!--  <MSBuild.ExtensionPack.SqlServer.SqlExecute TaskAction="ExecuteReader" Sql="Select * from sys.tables" ConnectionString="Data Source=$(SQLDataSource);Initial Catalog=$(SQLDB);Uid=$(SQLUserName);Pwd=$(SQLPassword)" Parameters="@(Variable)" > 
             <Output ItemName="RResult" TaskParameter="ReaderResult"/> 
-        </MSBuild.ExtensionPack.SqlServer.SqlExecute> 
+        </MSBuild.ExtensionPack.SqlServer.SqlExecute> -->
         <MSBuild.ExtensionPack.SqlServer.SqlExecute TaskAction="ExecuteReader" Files="@(SQLQuery)" ConnectionString="Data Source=$(SQLDataSource);Initial Catalog=$(SQLDB);Uid=$(SQLUserName);Pwd=$(SQLPassword)" Parameters="@(Variable)" > 
-            <Output ItemName="RResult" TaskParameter="ReaderResult"/> 
+            <Output ItemName="VResult" TaskParameter="ReaderResult"/> 
         </MSBuild.ExtensionPack.SqlServer.SqlExecute> 	    
-        <Message Text="%(RResult.Identity) | %(RResult.category)  | %(RResult.TableName) | %(RResult.ColumnName) | %(RResult.Comments)"/> 
+        <Message Text="%(VResult.Identity) | %(VResult.category)  | %(VResult.TableName) | %(VResult.ColumnName) | %(VResult.Comments)"/> 
     </Target>
 <Target Name="ReadFromFile">
         <ReadLinesFromFile
