@@ -40,7 +40,7 @@ node
 
           bat '''
 
-          "'''+ MSBuildPath +  '''" ''' +  QCVSSWorkFolder.replace("\\\\", "\\") + "\\BuildScript" +'\\RunSQL.msbuild'  +  ''' /t:RunApp'''  + 
+          "'''+ MSBuildPath +  '''" ''' +  QCVSSWorkFolder.replace("\\\\", "\\") + "\\BuildScript" +'\\RunSQL.msbuild'  +  ''' /t:''' + Target  + 
 
           ''' /p:ApplicationName=''' + ApplicationName +
 
