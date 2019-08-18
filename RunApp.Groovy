@@ -6,7 +6,7 @@ node
 
 
 
-    def Target= "${params.Target}"
+    def Target= "ApplicationName"
     def ApplicationName= "${params.ApplicationName}"
     def SQLDB= "${params.SQLDB}"
 
