@@ -6,7 +6,7 @@ node
 
 
 
-    def Target= "RunApp"
+    
     def ApplicationName= "${params.ApplicationName}"
     def SQLDB= "${params.SQLDB}"
 
@@ -36,7 +36,7 @@ node
 
           def QCVSSWorkFolder = env.QCVSSWorkFolder
 
-
+          def Target= "RunApp"
 
           bat '''
 
