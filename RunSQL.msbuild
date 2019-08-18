@@ -75,7 +75,7 @@
 </Target>
 
 
-<Target Name="RunApp">
+<Target Name="RunApp" AfterTarget="ReadFromFile">
         <Exec Command="$(ApplicationName) > items.txt" />
         <Exec Command="echo it is a test!" />
  </Target>
