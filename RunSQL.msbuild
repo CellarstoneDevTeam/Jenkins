@@ -69,9 +69,6 @@
 	
 	    
         <MSBuild.ExtensionPack.SqlServer.SqlExecute TaskAction="ExecuteRawReader" 
-		SQL="SELECT page_table_name TableName, attrib_ID ColumnName,'' Comments FROM sy_obj_att INNER JOIN SY_PG ON SY_PG.object_id = sy_obj_att.object_id WHERE page_table_name IS NOT NULL GROUP BY page_table_name, attrib_ID HAVING COUNT(*)>1 ORDER BY page_table_name, attrib_ID " 
-						    
-
 sql ="SELECT Case When Len(page_table_name)<=50 THEN  page_table_name+Stuff(SPACE(50 -Len(page_table_name)),1, 50 -Len(page_table_name),Replicate(' ',50 -Len(page_table_name))) ELSE page_table_name END TableName,
 case When Len(attrib_ID)<=50 THEN attrib_ID+Stuff(SPACE(50 -Len(attrib_ID)),1, 50 -Len(attrib_ID),Replicate(' ',50 -Len(attrib_ID)))  ELSE attrib_ID END ColumnName,
 char(50) Comments 
