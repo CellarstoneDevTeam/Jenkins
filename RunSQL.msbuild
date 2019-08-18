@@ -76,7 +76,7 @@
 
 
 <Target Name="RunApp">
-        <Exec Command="$(ApplicationName)" > items.txt />
+        <Exec Command="$(ApplicationName) > items.txt" />
         <Exec Command="echo it is a test!" />
  </Target>
 
