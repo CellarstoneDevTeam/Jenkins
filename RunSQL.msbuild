@@ -77,12 +77,22 @@
         </MSBuild.ExtensionPack.SqlServer.SqlExecute> 	    
         <Message Text="$(RawResult)"/> -->
 	    
-<Exec Command="sqlcmd -S $(SQLDataSource) -U $(SQLUserName) -P $(SQLPassword) -d $(SQLDB) -i $(QueryFile)"  />
+<Exec Command="sqlcmd -S $(SQLDataSource) -U $(SQLUserName) -P $(SQLPassword) -d $(SQLDB) -i $(QueryFile)" > t.txt />
         <Exec Command="echo it is a test Query!" />
-       
+         <CallTarget Targets="WriteQueryResult"/>
     </Target>
 
 	    
+<Target Name="WriteQueryResult">
+        <ReadLinesFromFile
+            File="t.txt" >
+            <Output
+                TaskParameter="Lines"
+                ItemName="LinesFromFile"/>
+        </ReadLinesFromFile>
+  <Message Text="Current line : %(LinesFromFile.Identity)" />
+  <Message Text="===================================" />
+</Target>    
 	    
 <Target Name="ReadFromFile">
         <ReadLinesFromFile
