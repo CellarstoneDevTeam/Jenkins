@@ -16,6 +16,9 @@
 	<SQLDB>QCADMIN</SQLDB>
     </PropertyGroup>
     <PropertyGroup>
+	    <QueryFile></QueryFile>
+    </PropertyGroup>
+    <PropertyGroup>
 	    <ApplicationName>bat</ApplicationName>
     </PropertyGroup>
     <ItemGroup>
@@ -68,11 +71,15 @@
         </MSBuild.ExtensionPack.SqlServer.SqlExecute> -->
 	<!--Sql ="SELECT Case When Len(page_table_name)&lt;=50 THEN  page_table_name+Stuff(SPACE(50 -Len(page_table_name)),1, 50 -Len(page_table_name),Replicate(' ',50 -Len(page_table_name))) ELSE page_table_name END TableName,case When Len(attrib_ID)&lt;=50 THEN attrib_ID+Stuff(SPACE(50 -Len(attrib_ID)),1, 50 -Len(attrib_ID),Replicate(' ',50 -Len(attrib_ID)))  ELSE attrib_ID END ColumnName,char(50) Comments FROM sy_obj_att INNER JOIN SY_PG ON SY_PG.object_id = sy_obj_att.object_id where page_table_name IS NOT NULL GROUP BY page_table_name, attrib_ID HAVING COUNT(*)>1 ORDER BY page_table_name, attrib_ID"-->
 	    
-        <MSBuild.ExtensionPack.SqlServer.SqlExecute TaskAction="ExecuteRawReader" 
+<!--        <MSBuild.ExtensionPack.SqlServer.SqlExecute TaskAction="ExecuteRawReader" 
  sql ="SELECT Case When Len(page_table_name)&lt;=50 THEN  page_table_name+Stuff(SPACE(50 -Len(page_table_name)),1, 50 -Len(page_table_name),Replicate(' ',50 -Len(page_table_name))) ELSE page_table_name END TableName,case When Len(attrib_ID)&lt;=50 THEN attrib_ID+Stuff(SPACE(50 -Len(attrib_ID)),1, 50 -Len(attrib_ID),Replicate(' ',50 -Len(attrib_ID)))  ELSE attrib_ID END ColumnName,char(50) Comments FROM sy_obj_att INNER JOIN SY_PG ON SY_PG.object_id = sy_obj_att.object_id where page_table_name IS NOT NULL GROUP BY page_table_name, attrib_ID HAVING COUNT(*)>1 ORDER BY page_table_name, attrib_ID" ConnectionString="Data Source=$(SQLDataSource);Initial Catalog=$(SQLDB);Uid=$(SQLUserName);Pwd=$(SQLPassword)" Parameters="@(Variable)" > 
         <Output PropertyName="RawResult" TaskParameter="RawReaderResult"/> 
         </MSBuild.ExtensionPack.SqlServer.SqlExecute> 	    
-        <Message Text="$(RawResult)"/> 
+        <Message Text="$(RawResult)"/> -->
+	    
+<Exec Command="sqlcmd -S $(SQLDataSource) -U $(SQLUserName) -P $(SQLPassword) -d $(SQLDB) -i $(QueryFile)"  />
+        <Exec Command="echo it is a test Query!" />
+       
     </Target>
 
 	    
@@ -87,6 +94,7 @@
   <Message Text="Current line : %(LinesFromFile.Identity)" />
   <Message Text="===================================" />
 </Target>
+
 
 
 <Target Name="RunApp">
