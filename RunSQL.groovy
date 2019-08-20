@@ -5,7 +5,7 @@ node
     def Target= "${params.Target}"
     def SQLDB= "${params.SQLDB}"
     
-    def QueryFile ="${params.QueryFile}"
+    def QueryFile ="ValidationQuery.sql"
     stage('Restore QCommDB')
 
     { 
