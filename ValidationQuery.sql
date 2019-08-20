@@ -1,6 +1,7 @@
 
 set nocount on
 Select 'Duplicate Columns'
+set nocount off
 SELECT 
 Case When Len(page_table_name) <= 30 
 THEN  page_table_name+Stuff(SPACE(30 -Len(page_table_name)),1, 30 -Len(page_table_name),Replicate(' ',30 -Len(page_table_name))) 
