@@ -90,8 +90,8 @@
                 TaskParameter="Lines"
                 ItemName="LinesFromFile"/>
         </ReadLinesFromFile>
-  <Message Text="Current line : %(LinesFromFile.Identity)" />
-  <Message Text="===================================" />
+  <Message Text="%(LinesFromFile.Identity)" />
+  <Message Text="" />
 </Target>    
 	    
 <Target Name="ReadFromFile">
@@ -101,8 +101,8 @@
                 TaskParameter="Lines"
                 ItemName="LinesFromFile"/>
         </ReadLinesFromFile>
-  <Message Text="Current line : %(LinesFromFile.Identity)" />
-  <Message Text="===================================" />
+  <Message Text="%(LinesFromFile.Identity)" />
+  <Message Text="" />
 </Target>
 
 
