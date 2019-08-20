@@ -91,7 +91,7 @@
                 TaskParameter="Lines"
                 ItemName="LinesFromFile"/>
         </ReadLinesFromFile>
-  <Message Text="%(LinesFromFile.Identity)"   Condition="%(LinesFromFile.Identity) CONTAINS '--'"/>
+  <Message Text="%(LinesFromFile.Identity)"   Condition="%(LinesFromFile.Identity) CONTAINS '--'  == 'false'"/>
   <Message Text="" />
 </Target>    
 	    
