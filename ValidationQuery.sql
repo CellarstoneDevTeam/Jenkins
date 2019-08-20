@@ -1,10 +1,13 @@
 
 set nocount on
 Select 'Duplicate Columns'
-select '-----------------'
-SELECT page_table_name TableName, attrib_ID ColumnName,'' Notes FROM sy_obj_att INNER JOIN SY_PG ON SY_PG.object_id = sy_obj_att.object_id GROUP BY page_table_name, attrib_ID HAVING COUNT(*)>1 ORDER BY page_table_name, attrib_ID 
+select '-'
+SELECT 
+Case When Len(page_table_name) <= 30 
+THEN  table_name+Stuff(SPACE(30 -Len(page_table_name)),1, 30 -Len(page_table_name),Replicate(' ',30 -Len(page_table_name))) 
+ELSE page_table_name END + ' '+  attrib_ID ColumnName,'' Notes FROM sy_obj_att INNER JOIN SY_PG ON SY_PG.object_id = sy_obj_att.object_id GROUP BY page_table_name, attrib_ID HAVING COUNT(*)>1 ORDER BY page_table_name, attrib_ID 
 Select 'Missing Dictionary Columns'
-select '--------------------------'
+select '-'
 set nocount off
 select 
 Case When Len(table_name) <= 30 
