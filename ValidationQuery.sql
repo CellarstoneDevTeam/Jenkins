@@ -1,13 +1,13 @@
 
 set nocount on
 Select 'Duplicate Columns'
-
 SELECT 
 Case When Len(page_table_name) <= 30 
 THEN  page_table_name+Stuff(SPACE(30 -Len(page_table_name)),1, 30 -Len(page_table_name),Replicate(' ',30 -Len(page_table_name))) 
-ELSE page_table_name END + ' '+  attrib_ID ColumnName FROM sy_obj_att INNER JOIN SY_PG ON SY_PG.object_id = sy_obj_att.object_id GROUP BY page_table_name, attrib_ID HAVING COUNT(*)>1 ORDER BY page_table_name, attrib_ID 
+ELSE page_table_name END + ' '+  attrib_ID  FROM sy_obj_att INNER JOIN SY_PG ON SY_PG.object_id = sy_obj_att.object_id 
+where page_table_name is not null 
+GROUP BY page_table_name, attrib_ID HAVING COUNT(*)>1 ORDER BY page_table_name, attrib_ID 
 Select 'Missing Dictionary Columns'
-
 set nocount off
 select 
 Case When Len(table_name) <= 30 
