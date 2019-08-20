@@ -5,7 +5,7 @@ SELECT page_table_name TableName, attrib_ID ColumnName,'' Notes FROM sy_obj_att 
 Select 'Missing Dictionary Columns'
 select '--------------------------'
 select 
-Case When Len(table_name) lt;=30 
+Case When Len(table_name) &lt;=30 
 THEN  table_name+Stuff(SPACE(30 -Len(table_name)),1, 30 -Len(table_name),Replicate(' ',30 -Len(table_name))) 
 ELSE table_name END + ' - '+  column_name from information_schema.columns isc
 where not exists
