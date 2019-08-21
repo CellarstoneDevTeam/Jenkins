@@ -91,12 +91,10 @@
                 TaskParameter="Lines"
                 ItemName="LinesFromFile"/>
         </ReadLinesFromFile>
-  <!--<Message Text="%(LinesFromFile.Identity)" />-->
-	<PropertyGroup>
-            <Trimmed>"%(LinesFromFile.Identity)".Replace('-','')</Trimmed>
-        </PropertyGroup>
-	 <Message Text="%(LinesFromFile.Identity)" /> -->
-	<!--<Message Text="$(Trimmed)"/>-->
+  <Message Text="%(LinesFromFile.Identity)" />
+	
+	 
+	
         <Message Text="" />
 </Target>    
 	    
