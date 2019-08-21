@@ -61,7 +61,7 @@ def Patch = env.Patch
             def buildscriptPath=""
             temp = temp.split('\\\\');
             buildscriptPath= temp[0] +'\\' + temp[1] + '\\BuildScript'
-            
+            print 'buildscript path '+ buildscriptPath
 
 
  /*bat '''
