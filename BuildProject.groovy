@@ -162,13 +162,14 @@ stage(QCVSSProjectFolder + ' Get Source from VSS')
             dllname= dllname.substring(dllname.lastIndexOf("\\"))
             //Replace the project name with blank to get the full path alone
             def dllpath = "$it".replace(dllname,"")
-
+             
             //bat "copy " +  rootpath +  "\\BuildProject.msbuild" + " " + dllpath 
 
             //Copy all dlls from reference folder- This is to resolve any dependancy issues.
             println "copy " + QCVSSWorkFolder.replace("\\\\", "\\") + "\\References " + dllpath +  "\\bin\\release"
+		 println "solution" + "$it"
             bat "copy " + QCVSSWorkFolder.replace("\\\\", "\\") + "\\References " + dllpath +  "\\bin\\release"
-	   println "solution" + "$it"
+	  
             compilesolution("$it")
             //Get the output assembly Name it can be exe or dll
             def assembly = getassemblyname("$it")
