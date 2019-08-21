@@ -92,7 +92,7 @@
                 ItemName="LinesFromFile"/>
         </ReadLinesFromFile>
   <!--<Message Text="%(LinesFromFile.Identity)" />-->
-	  <Message Text="%(LinesFromFile.Identity)'->Replace('-', ''))" />
+	  <Message Text="'%(LinesFromFile.Identity)'->Replace('-', ''))" />
   <Message Text="" />
 </Target>    
 	    
