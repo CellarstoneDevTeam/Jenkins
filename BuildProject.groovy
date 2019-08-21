@@ -168,6 +168,7 @@ stage(QCVSSProjectFolder + ' Get Source from VSS')
             //Copy all dlls from reference folder- This is to resolve any dependancy issues.
             println "copy " + QCVSSWorkFolder.replace("\\\\", "\\") + "\\References " + dllpath +  "\\bin\\release"
             bat "copy " + QCVSSWorkFolder.replace("\\\\", "\\") + "\\References " + dllpath +  "\\bin\\release"
+	   println "solution" + "$it"
             compilesolution("$it")
             //Get the output assembly Name it can be exe or dll
             def assembly = getassemblyname("$it")
