@@ -1,4 +1,4 @@
-Select 'Missing Dictionary Columns'
+Select '*1 Missing Dictionary Columns'
 set nocount off
 select 
 Case When Len(table_name) <= 30 
@@ -10,6 +10,8 @@ INNER JOIN sy_obj_att att ON obj.af_row_id = att.object_id
 where object_table=isc.TABLE_NAME and attrib_id=isc.COLUMN_NAME ) 
 and  table_name in  (select Table_name from INFORMATION_SCHEMA.tables ist where  exists (select * from sy_obj where object_table=ist.TABLE_NAME))
 order by table_name,column_name
+
+Select '*2 Duplicate Columns in Dictionary'
 
 SELECT 
 Case When Len(page_table_name) <= 30 
