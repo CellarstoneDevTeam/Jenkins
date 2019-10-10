@@ -4,14 +4,14 @@
     <!-- Property Group -->
     <PropertyGroup>
         <TPath>C:\Program Files\MSBuildExtensionPack\4.0\MSBuild.ExtensionPack.tasks</TPath>
-        <FTPHost>10.199.4.20</FTPHost>
+        <FTPHost>10.199.4.19</FTPHost>
 	<FTPUserName>Cellarstone</FTPUserName>
 	<FTPPassword>Cellarstone1</FTPPassword>
 	<FTPFolder>'D:\FTPDevServer'</FTPFolder> 
 	 
     </PropertyGroup>
     <PropertyGroup>
-        <SQLDatasource>10.199.4.20</SQLDatasource>
+        <SQLDatasource>10.199.4.19</SQLDatasource>
         <SQLUserName>qcadmin</SQLUserName>
 	<SQLPassword>QCADMIN</SQLPassword>
     </PropertyGroup>
@@ -24,7 +24,7 @@
 	<PropertyGroup>
 		<ProjectFolder>FullPathofProjectFolder</ProjectFolder>
         <BuildProject>CalculationProcess</BuildProject>
-        <ProjectName>$(BuildProject.Replace(".sln",""))</ProjectName>
+        <ProjectName>$(BuildProject.Replace(".sln","")+"_Files")</ProjectName>
     </PropertyGroup>
 	<PropertyGroup>  
         <ProductName>Qcommission</ProductName>
