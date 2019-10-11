@@ -132,6 +132,7 @@ def QCVSSWorkFolder=env.QCVSSWorkFolder
 //def QCVSSProjectFolder= "${env.JOB_NAME}"
 
 def QCVSSProjectFolder= "${params.Project}"
+def QCEXEDllCopyPath= "${params.CopyPath}"
 //def QCVSSProjectFolder = item.lastBuild.getEnvironment(null).get('Project')
 
 def VSSPath = env.VSSPath
@@ -173,10 +174,10 @@ stage(QCVSSProjectFolder + ' Get Source from VSS')
             compilesolution("$it")
             //Get the output assembly Name it can be exe or dll
             def assembly = getassemblyname("$it")
-            println "copy " + dllpath +  "\\bin\\release\\" + assembly + " " + QCVSSWorkFolder.replace("\\\\", "\\") + "\\References /y"    
+            println "copy " + dllpath +  "\\bin\\release\\" + assembly + " " + QCVSSWorkFolder.replace("\\\\", "\\") + "\\" + QCEXEDllCopyPath + " /y"    
 	    bat '\"%DigitalSignPath%\\signtool\" sign /f \"%DigitalSignPath%\\mypfxfile.pfx\" /p %DigitalSignPassword% /t http://timestamp.verisign.com/scripts/timstamp.dll \"' + dllpath + "\\bin\\release" +"\\" + assembly   		
             //Copy the assembly file to reference folder - The following projects compiling will refresh the dependancy dlls from this folder
-            bat "copy  " + dllpath +  "\\bin\\release\\" + assembly + " " + QCVSSWorkFolder.replace("\\\\", "\\") + "\\References /y"    
+            bat "copy  " + dllpath +  "\\bin\\release\\" + assembly + " " + QCVSSWorkFolder.replace("\\\\", "\\") + "\\" + QCEXEDllCopyPath + " /y"    
         }
      }
 }
