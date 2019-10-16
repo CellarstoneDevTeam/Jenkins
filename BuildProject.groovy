@@ -167,9 +167,9 @@ stage(QCVSSProjectFolder + ' Get Source from VSS')
             //bat "copy " +  rootpath +  "\\BuildProject.msbuild" + " " + dllpath 
 
             //Copy all dlls from reference folder- This is to resolve any dependancy issues.
-            println "copy " + QCVSSWorkFolder.replace("\\\\", "\\") + "\\References " + dllpath +  "\\bin\\release"
+            println "copy " + QCVSSWorkFolder.replace("\\\\", "\\") + "\\References " + dllpath +  "\\bin"
 		 println "solution" + "$it"
-            bat "copy " + QCVSSWorkFolder.replace("\\\\", "\\") + "\\References " + dllpath +  "\\bin\\release"
+            bat "If Exist " + QCVSSWorkFolder.replace("\\\\", "\\") + "\\References " copy " + QCVSSWorkFolder.replace("\\\\", "\\") + "\\References " + dllpath +  "\\bin"
 	  
             compilesolution("$it")
             //Get the output assembly Name it can be exe or dll
