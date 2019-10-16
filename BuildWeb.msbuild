@@ -65,9 +65,10 @@
         <AspNetCompiler
             VirtualPath="$(BuildProject)"
             PhysicalPath="$(ProjectFolder)"
-            TargetPath="$(MSBuildProjectDirectory)\PrecompileFolder\$(ProjectName) -fixedNames"
+            TargetPath="$(MSBuildProjectDirectory)\PrecompileFolder\$(ProjectName)"
             Force="true"
 			Updateable="true"
+			UseFixedNames="true"
 			/>
 			<FileUpdate 
                 Files="$(MSBuildProjectDirectory)\PrecompileFolder\$(ProjectName)\Web.Config"
