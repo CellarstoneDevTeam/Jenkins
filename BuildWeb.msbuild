@@ -85,7 +85,8 @@
 		    <FilesToCopy_PlanDesigner Include="$(ProjectFolder)\PlanDesigner_Report\**\*.*"  Condition="$(BuildProject)=='QCommissionPortal.sln'" />
 		    <ReportComponents Include="$(ProjectFolder)\ReportComponents\**\*.*"  Condition="$(BuildProject)=='QCommissionPortal.sln'" />
 		    <ReportFiles Include="$(ProjectFolder)\ReportFiles\**\*.*"  Condition="$(BuildProject)=='QCommissionPortal.sln'" />
-		    <SSOFiles Include="$(ProjectFolder)\..\QCommission Portal SSO\**\*.*"  Condition="$(BuildProject)=='QCommissionPortal.sln'" />
+		    <!--<SSOFiles Include="$(ProjectFolder)\..\QCommission Portal SSO\**\*.*"  Condition="$(BuildProject)=='QCommissionPortal.sln'" />-->
+		    <SSOFiles Include="$(MSBuildProjectDirectory)\PrecompileFolder\QCommission Portal SSO_Files\**\*.*"  Condition="$(BuildProject)=='QCommissionPortal.sln'" />
             <CompleteArtifacts Include= "$(ProjectFolder)\PrecompileFolder\**\*.*" />
         </ItemGroup> 
 	    <ItemGroup>
