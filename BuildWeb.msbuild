@@ -92,7 +92,6 @@
 		    <FilesToDelete Include = "$(MSBuildProjectDirectory)\PrecompileFolder\$(ProjectName)\maxblox.ini"/>
 		    <FilesToDelete Include = "$(MSBuildProjectDirectory)\PrecompileFolder\$(ProjectName)\*.vssscc"/>
 		    <FilesToDelete Include = "$(MSBuildProjectDirectory)\PrecompileFolder\$(ProjectName)\*.scc"/>
-		    <FilesToDelete Include = "$(MSBuildProjectDirectory)\PrecompileFolder\$(ProjectName)\Company Registration\*.*"/>
 		    <FilesToDelete Include = "$(MSBuildProjectDirectory)\PrecompileFolder\$(ProjectName)\Log\*.*"/>
 		    <FilesToDelete Include = "$(MSBuildProjectDirectory)\PrecompileFolder\$(ProjectName)\PlanDocuments\*.*"/>
 		    <FilesToDelete Include = "$(MSBuildProjectDirectory)\PrecompileFolder\$(ProjectName)\report\*.*"/>
@@ -108,7 +107,7 @@
 	    </ItemGroup>
     	<Message Text="Remove Directory" />	
         <RemoveDir Directories="$(MSBuildProjectDirectory)\PrecompileFolder\$(ProjectName)\SSOLog" Condition="$(BuildProject)=='QCommission Portal SSO.sln'"/>
-    	<RemoveDir Directories="$(MSBuildProjectDirectory)\PrecompileFolder\$(ProjectName)\Company Registration\*.*" Condition="$(BuildProject)=='QCommissionPortal.sln'"/>
+    	<RemoveDir Directories="$(MSBuildProjectDirectory)\PrecompileFolder\$(ProjectName)\Company Registration" Condition="$(BuildProject)=='QCommissionPortal.sln'"/>
     	<RemoveDir Directories="$(MSBuildProjectDirectory)\PrecompileFolder\$(ProjectName)\Certificates" Condition="$(BuildProject)=='QCommissionPortal.sln'"/>
 	<!--<RemoveDir Directories="$(MSBuildProjectDirectory)\PrecompileFolder\$(ProjectName)\report" Condition="$(BuildProject)=='QCommissionPortal.sln'"/>-->
         <RemoveDir Directories="$(MSBuildProjectDirectory)\PrecompileFolder\$(ProjectName)\ReportComponents" Condition="$(BuildProject)=='QCommissionPortal.sln'"/>
