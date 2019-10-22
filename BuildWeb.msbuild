@@ -115,7 +115,7 @@
         <!--<RemoveDir Directories="$(MSBuildProjectDirectory)\PrecompileFolder\$(ProjectName)\Standard Reports" Condition="$(BuildProject)=='QCommissionPortal.sln'" />
         <RemoveDir Directories="$(MSBuildProjectDirectory)\PrecompileFolder\$(ProjectName)\Standard Statements" Condition="$(BuildProject)=='QCommissionPortal.sln'" />-->
         <RemoveDir Directories="$(MSBuildProjectDirectory)\PrecompileFolder\$(ProjectName)\tmp2DB_files" Condition="$(BuildProject)=='QCommissionPortal.sln'" />
-        <RemoveDir Directories="$(MSBuildProjectDirectory)\PrecompileFolder\$(ProjectName)\Validation Reports\" Condition="$(BuildProject)=='QCommissionPortal.sln'" />
+        <RemoveDir Directories="$(MSBuildProjectDirectory)\PrecompileFolder\$(ProjectName)\Validation Reports" Condition="$(BuildProject)=='QCommissionPortal.sln'" />
         <RemoveDir Directories="$(MSBuildProjectDirectory)\PrecompileFolder\$(ProjectName)\PlanDesigner_Report" Condition="$(BuildProject)=='QCommissionPortal.sln'" />
         <!--<RemoveDir Directories="$(MSBuildProjectDirectory)\PrecompileFolder\$(ProjectName)\PlanDocuments" Condition="$(BuildProject)=='QCommissionPortal.sln'" /> -->
         <RemoveDir Directories="$(MSBuildProjectDirectory)\PrecompileFolder\$(ProjectName)\Open Transactions with Blank Payee ID.tmp_files" Condition="$(BuildProject)=='QCommissionPortal.sln'" />
@@ -155,6 +155,7 @@
             Retries="3"
             RetryDelayMilliseconds="300"/>
     	<Message Text="Create Directory" />	
+	    <MakeDir Directories="$(MSBuildProjectDirectory)\PrecompileFolder\$(ProjectName)\Validation Reports" Condition="$(BuildProject)=='QCommissionPortal.sln'"/>
 	    <MakeDir Directories="$(MSBuildProjectDirectory)\PrecompileFolder\$(ProjectName)\SSO" Condition="$(BuildProject)=='QCommission Portal SSO.sln'"/>
 	    <MakeDir Directories="$(MSBuildProjectDirectory)\PrecompileFolder\$(ProjectName)\SSO\SSOLog" Condition="$(BuildProject)=='QCommission Portal SSO.sln'"/>
 	    <Message Text="Copy Files" />	
