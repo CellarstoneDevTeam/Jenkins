@@ -92,7 +92,7 @@
 		    <FilesToDelete Include = "$(MSBuildProjectDirectory)\PrecompileFolder\$(ProjectName)\maxblox.ini"/>
 		    <FilesToDelete Include = "$(MSBuildProjectDirectory)\PrecompileFolder\$(ProjectName)\*.vssscc"/>
 		    <FilesToDelete Include = "$(MSBuildProjectDirectory)\PrecompileFolder\$(ProjectName)\*.scc"/>
-		    <FilesToDelete Include = "$(MSBuildProjectDirectory)\PrecompileFolder\$(ProjectName)\Company Registration\*.*"/>
+		    <FilesToDelete Include = "$(MSBuildProjectDirectory)\PrecompileFolder\$(ProjectName)\Company Registration\**\*.*"/>
 		    <FilesToDelete Include = "$(MSBuildProjectDirectory)\PrecompileFolder\$(ProjectName)\Log\*.*"/>
 		    <FilesToDelete Include = "$(MSBuildProjectDirectory)\PrecompileFolder\$(ProjectName)\PlanDocuments\*.*"/>
 		    <FilesToDelete Include = "$(MSBuildProjectDirectory)\PrecompileFolder\$(ProjectName)\report\*.*"/>
