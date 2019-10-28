@@ -20,6 +20,7 @@ EXEC (@sqlstr);
             end                                                         
 set @sqlstr = 'create DATABASE '+ '@SQLDB'+' '                                                 
 EXEC (@sqlstr);
+go
                                                                   
 
 
