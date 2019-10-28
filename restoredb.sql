@@ -7,17 +7,20 @@ DECLARE @file_name_l nvarchar(200) = CONVERT(sysname, SERVERPROPERTY('InstanceDe
 set @BackupFileName = '@SQLDB' + '.bak'''
 set @DBName = '@SQLDB'  + ''
 
-/*IF (EXISTS (SELECT name 
+IF (EXISTS (SELECT name 
 FROM master.dbo.sysdatabases 
 WHERE ('[' + name + ']' = N'@DBName'
 OR name = N'@DBName')))
-     
-drop database N'@DBName'*/
-
-                                                     
-CREATE DATABASE  '@DBName'
+ set @sqlstr = 'drop DATABASE '+ '@SQLDB'+' '
+                                                                     
+if len(@sqlstr)=0
+else
+EXEC (@sqlstr);
+                                                                     
+set @sqlstr = 'create DATABASE '+ '@SQLDB'+' '                                                 
+EXEC (@sqlstr);
                                                                   
-/*
+
 
 set @sqlstr = 'ALTER DATABASE '+ '@SQLDB'+' '
 SET @sqlstr =  @sqlstr +'SET SINGLE_USER WITH '
