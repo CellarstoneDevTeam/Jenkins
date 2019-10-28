@@ -5,13 +5,23 @@ DECLARE @file_name_d nvarchar(200) = CONVERT(sysname, SERVERPROPERTY('InstanceDe
 DECLARE @file_name_l nvarchar(200) = CONVERT(sysname, SERVERPROPERTY('InstanceDefaultLogPath'))
 set @BackupFileName = '@SQLDB' + '.bak'''
 
+IF (EXISTS (SELECT name 
+FROM master.dbo.sysdatabases 
+WHERE ('[' + name + ']' = @SQLDB 
+OR name = @SQLDB)))
+       BEGIN
+drop database @SQLDB;  
+GO
+END                                                         
+CREATE DATABASE  @SQLDB;
+GO                                                                     
+
+
 set @sqlstr = 'ALTER DATABASE '+ '@SQLDB'+' '
 SET @sqlstr =  @sqlstr +'SET SINGLE_USER WITH '
 SET @sqlstr =  @sqlstr +'ROLLBACK IMMEDIATE'
 EXEC (@sqlstr);
-
-drop database @SQLDB;                                                   
-CREATE DATABASE  @SQLDB;
+                                                                     
 SET @SQL_SCRIPT = 'RESTORE DATABASE ' + '@SQLDB' + ' FROM DISK = '''+ @FTPPath + '\' + @BackupFileName + ' WITH REPLACE'
                                                                      
 use qcbuild
