@@ -3,7 +3,7 @@ Select '*1 Missing Dictionary Columns - Table/ Column List'
 set nocount off
 declare @column1caption varchar(max)
 declare @column2caption varchar(max)
-set @colmn1caption='Table Name'
+set @column1caption='Table Name'
 set @column2caption='Column Name'
 
 select
