@@ -12,10 +12,10 @@ FROM master.dbo.sysdatabases
 WHERE ('[' + name + ']' = N'@SQLDBNAME'
 OR name = N'@SQLDBNAME')))
      
-drop database N'@SQLDBNAME'*/
+drop database N'@SQLDBNAME'
 
                                                      
-CREATE DATABASE  @SQLDBNAME
+CREATE DATABASE  @SQLDBNAME*/
                                                                   
 /*
 
