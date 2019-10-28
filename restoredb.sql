@@ -10,7 +10,7 @@ FROM master.dbo.sysdatabases
 WHERE ('[' + name + ']' = N'@SQLDB'
 OR name = N'@SQLDB')))
        BEGIN
-drop database 'N@SQLDB' 
+drop database N'@SQLDB' 
 
 END                                                         
 CREATE DATABASE  @SQLDB
