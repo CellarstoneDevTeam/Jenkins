@@ -7,12 +7,12 @@ DECLARE @file_name_l nvarchar(200) = CONVERT(sysname, SERVERPROPERTY('InstanceDe
 set @BackupFileName = '@SQLDB' + '.bak'''
 set @SQLDBNAME = '@SQLDB'  
 
-IF (EXISTS (SELECT name 
+/*IF (EXISTS (SELECT name 
 FROM master.dbo.sysdatabases 
-WHERE ('[' + name + ']' = @SQLDBNAME
-OR name = @SQLDBNAME)))
+WHERE ('[' + name + ']' = N'@SQLDBNAME'
+OR name = N'@SQLDBNAME')))
      
-drop database @SQLDBNAME
+drop database N'@SQLDBNAME'*/
 
                                                      
 CREATE DATABASE  @SQLDBNAME
