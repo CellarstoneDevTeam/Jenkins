@@ -13,7 +13,7 @@ select
  @column1caption+Stuff(SPACE(50 -Len(@column1caption)),1, 50 -Len(@column1caption),Replicate(' ',50 -Len(@column1caption))) +
  ' - '+ @column2caption
 
-select replicate(@columnunderline, len(@column1caption) + len(@column2caption)+1) 
+select replicate(@columnunderline, 101) 
 
 set nocount off
 select 
@@ -33,7 +33,7 @@ select
  @column1caption+Stuff(SPACE(50 -Len(@column1caption)),1, 50 -Len(@column1caption),Replicate(' ',50 -Len(@column1caption))) +
  ' - '+ @column2caption
 
-select replicate(@columnunderline, len(@column1caption) + len(@column2caption)+1) 
+select replicate(@columnunderline, 101) 
 
 
 set nocount off
