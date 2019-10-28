@@ -5,7 +5,7 @@ declare @SQLDBNAME varchar(max)
 DECLARE @file_name_d nvarchar(200) = CONVERT(sysname, SERVERPROPERTY('InstanceDefaultDataPath'))
 DECLARE @file_name_l nvarchar(200) = CONVERT(sysname, SERVERPROPERTY('InstanceDefaultLogPath'))
 set @BackupFileName = '@SQLDB' + '.bak'''
-set @SQLDBNAME = '@SQLDB'  
+set @SQLDBNAME = '@SQLDB'  + ''
 
 /*IF (EXISTS (SELECT name 
 FROM master.dbo.sysdatabases 
