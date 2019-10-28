@@ -28,7 +28,7 @@ set @sqlstr = 'ALTER DATABASE '+ '@SQLDB'+' '
 SET @sqlstr =  @sqlstr +'SET SINGLE_USER WITH '
 SET @sqlstr =  @sqlstr +'ROLLBACK IMMEDIATE'
 EXEC (@sqlstr);
-    go
+    
                                                                      declare @sqlstr varchar(max)
 SET @SQL_SCRIPT = 'RESTORE DATABASE ' + '@SQLDB' + ' FROM DISK = '''+ @FTPPath + '\' + @BackupFileName + ' WITH REPLACE'
                                                                      
