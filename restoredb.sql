@@ -9,13 +9,13 @@ set @DBName = '@SQLDB'  + ''
 
 /*IF (EXISTS (SELECT name 
 FROM master.dbo.sysdatabases 
-WHERE ('[' + name + ']' = N'@SQLDBNAME'
-OR name = N'@SQLDBNAME')))
+WHERE ('[' + name + ']' = N'@DBName'
+OR name = N'@DBName')))
      
-drop database N'@SQLDBNAME'
+drop database N'@DBName'*/
 
                                                      
-CREATE DATABASE  @SQLDBNAME*/
+CREATE DATABASE  @DBName
                                                                   
 /*
 
