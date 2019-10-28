@@ -15,7 +15,7 @@ OR name = N'@DBName')))
 drop database N'@DBName'*/
 
                                                      
-CREATE DATABASE  @DBName
+CREATE DATABASE  '@DBName'
                                                                   
 /*
 
