@@ -21,7 +21,7 @@ set @DBName = '@SQLDB'  + ''
                                                                      
                                                                   
 
-create database SQLDB
+create database @SQLDB
     
                                                                   
 set @sqlstr = 'ALTER DATABASE '+ '@SQLDB'+' '
