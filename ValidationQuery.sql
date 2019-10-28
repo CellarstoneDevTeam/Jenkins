@@ -7,14 +7,14 @@ declare @columnunderline varchar(max)
 set @column1caption='Table Name'
 set @column2caption='Column Name'
 
-set @columnunderline=' '
+set @columnunderline='-'
 
 select
 Case When Len(@column1caption) <= 50 
 THEN   @column1caption+Stuff(SPACE(50 -Len(@column1caption)),1, 50 -Len(@column1caption),Replicate(' ',50 -Len(@column1caption))) 
 ELSE @column1caption END + ' - '+ @column2caption
-select
-@columnunderline+Stuff(SPACE(100 -Len(@columnunderline)),1, 100 -Len(@columnunderline),Replicate(' ',100 -Len(@columnunderline))) 
+select replicate(@columnunderline, len(@column1caption) + len(@column2caption)+1) 
+
 set nocount off
 select 
 Case When Len(table_name) <= 50 
@@ -29,16 +29,12 @@ order by table_name,column_name
 set nocount on
 Select '*2 Duplicate Columns in Dictionary  Table/ Column List'
 
-
-
-
-select
 Case When Len(@column1caption) <= 50 
 THEN   @column1caption+Stuff(SPACE(50 -Len(@column1caption)),1, 50 -Len(@column1caption),Replicate(' ',50 -Len(@column1caption))) 
 ELSE @column1caption END + ' - '+ @column2caption
+select replicate(@columnunderline, len(@column1caption) + len(@column2caption)+1) 
 
-select
-@columnunderline+Stuff(SPACE(100 -Len(@columnunderline)),1, 100 -Len(@columnunderline),Replicate(' ',100 -Len(@columnunderline)))
+
 set nocount off
 SELECT 
 Case When Len(page_table_name) <= 50 
