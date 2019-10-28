@@ -8,9 +8,9 @@ set @BackupFileName = '@SQLDB' + '.bak'''
 IF (EXISTS (SELECT name 
 FROM master.dbo.sysdatabases 
 WHERE ('[' + name + ']' = '@SQLDB'
-OR name = @SQLDB)))
+OR name = '@SQLDB')))
        BEGIN
-drop database @SQLDB 
+drop database '@SQLDB' 
 
 END                                                         
 CREATE DATABASE  @SQLDB
