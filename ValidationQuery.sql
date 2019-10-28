@@ -5,6 +5,8 @@ declare @column1caption varchar(max)
 declare @column2caption varchar(max)
 declare @columnunderline varchar(max)
 set @column1caption='Table Name'
+set @column2caption='Column Name'
+
 set @columnunderline='-'
 
 select
