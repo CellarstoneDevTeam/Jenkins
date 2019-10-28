@@ -1,6 +1,6 @@
 set nocount on
 Select '*1 Missing Dictionary Columns - Table/ Column List'
-set nocount off
+
 declare @column1caption varchar(max)
 declare @column2caption varchar(max)
 declare @columnunderline varchar(max)
@@ -15,7 +15,7 @@ THEN   @column1caption+Stuff(SPACE(50 -Len(@column1caption)),1, 50 -Len(@column1
 ELSE @column1caption END + ' - '+ @column2caption
 select
 @columnunderline+Stuff(SPACE(100 -Len(@columnunderline)),1, 100 -Len(@columnunderline),Replicate(' ',100 -Len(@columnunderline))) 
-
+set nocount off
 select 
 Case When Len(table_name) <= 50 
 THEN  table_name+Stuff(SPACE(50 -Len(table_name)),1, 50 -Len(table_name),Replicate(' ',50 -Len(table_name))) 
@@ -28,7 +28,7 @@ and  table_name in  (select Table_name from INFORMATION_SCHEMA.tables ist where 
 order by table_name,column_name
 set nocount on
 Select '*2 Duplicate Columns in Dictionary  Table/ Column List'
-set nocount off
+
 
 
 
@@ -36,8 +36,10 @@ select
 Case When Len(@column1caption) <= 50 
 THEN   @column1caption+Stuff(SPACE(50 -Len(@column1caption)),1, 50 -Len(@column1caption),Replicate(' ',50 -Len(@column1caption))) 
 ELSE @column1caption END + ' - '+ @column2caption
+
 select
 @columnunderline+Stuff(SPACE(100 -Len(@columnunderline)),1, 100 -Len(@columnunderline),Replicate(' ',100 -Len(@columnunderline)))
+set nocount off
 SELECT 
 Case When Len(page_table_name) <= 50 
 THEN  page_table_name+Stuff(SPACE(50 -Len(page_table_name)),1, 50 -Len(page_table_name),Replicate(' ',50 -Len(page_table_name))) 
