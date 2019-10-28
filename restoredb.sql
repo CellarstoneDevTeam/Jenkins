@@ -7,16 +7,20 @@ DECLARE @file_name_l nvarchar(200) = CONVERT(sysname, SERVERPROPERTY('InstanceDe
 set @BackupFileName = '@SQLDB' + '.bak'''
 set @DBName = '@SQLDB'  + ''
 
-IF (EXISTS (SELECT name 
-FROM master.dbo.sysdatabases 
-WHERE ('[' + name + ']' = N'@DBName'
-OR name = N'@DBName')))
- drop DATABASE @SQLDB
-go
+
+       
+  BEGIN TRY  
+                                                                     
+                                                                     
+  drop DATABASE @SQLDB}
+  GO                                                         
+  END TRY  
+  begin catch
+     PRINT 'DATABASE NOT EXISTS'                                                                      
+  END catch
                                                                      
                                                                   
-drop database  @SQLDB
-       go
+
 create database SQLDB
        go
                                                                      declare @sqlstr varchar(max)
