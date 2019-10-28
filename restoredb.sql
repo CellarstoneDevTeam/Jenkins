@@ -23,7 +23,9 @@ EXEC (@sqlstr);
 go
                                                                   
 drop database  @SQLDB
-
+       go
+create database SQLDB
+       go
 set @sqlstr = 'ALTER DATABASE '+ '@SQLDB'+' '
 SET @sqlstr =  @sqlstr +'SET SINGLE_USER WITH '
 SET @sqlstr =  @sqlstr +'ROLLBACK IMMEDIATE'
