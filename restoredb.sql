@@ -11,12 +11,13 @@ IF (EXISTS (SELECT name
 FROM master.dbo.sysdatabases 
 WHERE ('[' + name + ']' = N'@DBName'
 OR name = N'@DBName')))
+       begin
  set @sqlstr = 'drop DATABASE '+ '@SQLDB'+' '
                                                                      
 if len(@sqlstr)>0
 
 EXEC (@sqlstr);
-                                                                     
+            end                                                         
 set @sqlstr = 'create DATABASE '+ '@SQLDB'+' '                                                 
 EXEC (@sqlstr);
                                                                   
