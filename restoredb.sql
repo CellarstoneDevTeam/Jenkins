@@ -6,7 +6,7 @@ DECLARE @file_name_d nvarchar(200) = CONVERT(sysname, SERVERPROPERTY('InstanceDe
 DECLARE @file_name_l nvarchar(200) = CONVERT(sysname, SERVERPROPERTY('InstanceDefaultLogPath'))
 set @BackupFileName = '@SQLDB' + '.bak'''
 set @DBName = '@SQLDB'  + ''
-
+/*
 IF (EXISTS (SELECT name 
 FROM master.dbo.sysdatabases 
 WHERE ('[' + name + ']' = N'@DBName'
@@ -21,6 +21,7 @@ EXEC (@sqlstr);
 set @sqlstr = 'create DATABASE '+ '@SQLDB'+' '                                                 
 EXEC (@sqlstr);
 go
+                                                                     */
                                                                   
 drop database  @SQLDB
        go
