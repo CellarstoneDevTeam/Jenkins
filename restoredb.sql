@@ -13,7 +13,7 @@ set @DBName = '@SQLDB'  + ''
                                                                      
                                                                      
   drop DATABASE @SQLDB
-  GO                                                         
+                                                         
   END TRY  
   begin catch
      PRINT 'DATABASE NOT EXISTS'                                                                      
@@ -22,7 +22,7 @@ set @DBName = '@SQLDB'  + ''
                                                                   
 
 create database SQLDB
-       go
+    
                                                                      declare @sqlstr varchar(max)
 set @sqlstr = 'ALTER DATABASE '+ '@SQLDB'+' '
 SET @sqlstr =  @sqlstr +'SET SINGLE_USER WITH '
