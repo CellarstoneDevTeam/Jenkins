@@ -10,11 +10,11 @@ FROM master.dbo.sysdatabases
 WHERE ('[' + name + ']' = @SQLDB 
 OR name = @SQLDB)))
        BEGIN
-drop database @SQLDB;  
-GO
+drop database @SQLDB 
+
 END                                                         
-CREATE DATABASE  @SQLDB;
-GO                                                                     
+CREATE DATABASE  @SQLDB
+                                                                  
 
 
 set @sqlstr = 'ALTER DATABASE '+ '@SQLDB'+' '
