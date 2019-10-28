@@ -13,8 +13,8 @@ WHERE ('[' + name + ']' = N'@DBName'
 OR name = N'@DBName')))
  set @sqlstr = 'drop DATABASE '+ '@SQLDB'+' '
                                                                      
-if len(@sqlstr)=0
-else
+if len(@sqlstr)>0
+
 EXEC (@sqlstr);
                                                                      
 set @sqlstr = 'create DATABASE '+ '@SQLDB'+' '                                                 
