@@ -77,7 +77,7 @@
         </MSBuild.ExtensionPack.SqlServer.SqlExecute> 	    
         <Message Text="$(RawResult)"/> -->
 	    
-	<Exec Command="sqlcmd -S $(SQLDataSource) -U $(SQLUserName) -P $(SQLPassword) -d $(SQLDB) -i $(QueryFile) -1 > t.txt" />
+	<Exec Command="sqlcmd -S $(SQLDataSource) -U $(SQLUserName) -P $(SQLPassword) -d $(SQLDB) -i $(QueryFile) -h -1 > t.txt" />
         
         <CallTarget Targets="WriteQueryResult"/>
     </Target>
