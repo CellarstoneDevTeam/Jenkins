@@ -9,13 +9,13 @@ IF (EXISTS (SELECT name
 FROM master.dbo.sysdatabases 
 WHERE ('[' + name + ']' = N'@SQLDB'
 OR name = N'@SQLDB')))
-       
+     
 drop database N'@SQLDB' 
 
                                                      
 CREATE DATABASE  N'@SQLDB'
                                                                   
-
+/*
 
 set @sqlstr = 'ALTER DATABASE '+ '@SQLDB'+' '
 SET @sqlstr =  @sqlstr +'SET SINGLE_USER WITH '
@@ -36,5 +36,5 @@ EXEC (@sqlstr);
 
 GO
 
-
+*/
 
