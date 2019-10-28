@@ -28,7 +28,7 @@ Select '*2 Duplicate Columns in Dictionary  Table/ Column List'
 set nocount off
 
 
-select
+
 select
 Case When Len(@column1caption) <= 50 
 THEN   @column1caption+Stuff(SPACE(50 -Len(@column1caption)),1, 50 -Len(@column1caption),Replicate(' ',50 -Len(@column1caption))) 
