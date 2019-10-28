@@ -23,7 +23,7 @@ set @DBName = '@SQLDB'  + ''
 
 create database SQLDB
     
-                                                                     declare @sqlstr varchar(max)
+                                                                  
 set @sqlstr = 'ALTER DATABASE '+ '@SQLDB'+' '
 SET @sqlstr =  @sqlstr +'SET SINGLE_USER WITH '
 SET @sqlstr =  @sqlstr +'ROLLBACK IMMEDIATE'
