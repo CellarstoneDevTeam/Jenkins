@@ -10,7 +10,7 @@ set @column2caption='Column Name'
 set @columnunderline='-'
 
 select
- @column1caption+Stuff(SPACE(50 -Len(@column1caption)),1, 50 -Len(@column1caption),Replicate(' ',50 -Len(@column1caption))) 
+ @column1caption+Stuff(SPACE(50 -Len(@column1caption)),1, 50 -Len(@column1caption),Replicate(' ',50 -Len(@column1caption))) +
  ' - '+ @column2caption
 
 select replicate(@columnunderline, len(@column1caption) + len(@column2caption)+1) 
@@ -30,7 +30,7 @@ set nocount on
 Select '*2 Duplicate Columns in Dictionary  Table/ Column List'
 
 select
- @column1caption+Stuff(SPACE(50 -Len(@column1caption)),1, 50 -Len(@column1caption),Replicate(' ',50 -Len(@column1caption))) 
+ @column1caption+Stuff(SPACE(50 -Len(@column1caption)),1, 50 -Len(@column1caption),Replicate(' ',50 -Len(@column1caption))) +
  ' - '+ @column2caption
 
 select replicate(@columnunderline, len(@column1caption) + len(@column2caption)+1) 
