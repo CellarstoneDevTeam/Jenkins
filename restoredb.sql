@@ -12,7 +12,7 @@ set @DBName = '@SQLDB'  + ''
   BEGIN TRY  
                                                                      
                                                                      
-  drop DATABASE @SQLDB}
+  drop DATABASE @SQLDB
   GO                                                         
   END TRY  
   begin catch
