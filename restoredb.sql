@@ -1,7 +1,7 @@
 Declare @SQL_SCRIPT varchar(max)
 declare @sqlstr varchar(max)
 declare @BackupFileName varchar(max)
-DECLARE @SQLDBNAME VARCHAR(MAX)
+declare @SQLDBNAME varchar(max)
 DECLARE @file_name_d nvarchar(200) = CONVERT(sysname, SERVERPROPERTY('InstanceDefaultDataPath'))
 DECLARE @file_name_l nvarchar(200) = CONVERT(sysname, SERVERPROPERTY('InstanceDefaultLogPath'))
 set @BackupFileName = '@SQLDB' + '.bak'''
@@ -10,12 +10,12 @@ set @SQLDBNAME = '@SQLDB'
 IF (EXISTS (SELECT name 
 FROM master.dbo.sysdatabases 
 WHERE ('[' + name + ']' = @SQLDBNAME
-OR name = '@SQLDBNAME')))
+OR name = @SQLDBNAME)))
      
-drop database N'@SQLDB' 
+drop database @SQLDBNAME
 
                                                      
-CREATE DATABASE  N'@SQLDB'
+CREATE DATABASE  @SQLDBNAME
                                                                   
 /*
 
