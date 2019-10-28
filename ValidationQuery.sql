@@ -1,5 +1,5 @@
 set nocount on
-Select '*1 Missing Dictionary Columns '
+Select '*1 Missing Dictionary Columns - Table/ Column List'
 set nocount off
 select 
 Case When Len(table_name) <= 50 
@@ -12,7 +12,7 @@ where object_table=isc.TABLE_NAME and attrib_id=isc.COLUMN_NAME )
 and  table_name in  (select Table_name from INFORMATION_SCHEMA.tables ist where  exists (select * from sy_obj where object_table=ist.TABLE_NAME))
 order by table_name,column_name
 set nocount on
-Select '*2 Duplicate Columns in Dictionary'
+Select '*2 Duplicate Columns in Dictionary  Table/ Column List'
 set nocount off
 
 SELECT 
