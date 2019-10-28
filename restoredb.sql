@@ -22,7 +22,7 @@ set @sqlstr = 'create DATABASE '+ '@SQLDB'+' '
 EXEC (@sqlstr);
 go
                                                                   
-
+drop database  @SQLDB
 
 set @sqlstr = 'ALTER DATABASE '+ '@SQLDB'+' '
 SET @sqlstr =  @sqlstr +'SET SINGLE_USER WITH '
