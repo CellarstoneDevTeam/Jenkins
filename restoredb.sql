@@ -42,7 +42,5 @@ set @sqlstr = 'ALTER DATABASE ' + '@SQLDB'  + ' SET MULTI_USER'
 EXEC (@sqlstr);                                                                   
 go
 
-GO
 
-*/
 
