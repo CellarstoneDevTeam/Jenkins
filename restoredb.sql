@@ -30,11 +30,11 @@ EXEC (@sqlstr);
                                                                      
 SET @SQL_SCRIPT = 'RESTORE DATABASE ' + '@SQLDB' + ' FROM DISK = '''+ @FTPPath + '\' + @BackupFileName + ' WITH REPLACE'
                                                                      
-use qcbuild
+/*use qcbuild
 delete from buildlog
 insert into buildlog (logtext) values (@SQL_SCRIPT)
 
-EXEC(@sql_script)
+EXEC(@sql_script)*/
 
 set @sqlstr = 'ALTER DATABASE ' + '@SQLDB'  + ' SET MULTI_USER'
 EXEC (@sqlstr);                                                                   
