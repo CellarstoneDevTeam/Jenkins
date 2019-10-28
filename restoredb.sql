@@ -7,7 +7,7 @@ set @BackupFileName = '@SQLDB' + '.bak'''
 
 IF (EXISTS (SELECT name 
 FROM master.dbo.sysdatabases 
-WHERE ('[' + name + ']' = '@SQLDB' 
+WHERE ('[' + name + ']' = ''@SQLDB'' 
 OR name = @SQLDB)))
        BEGIN
 drop database @SQLDB 
