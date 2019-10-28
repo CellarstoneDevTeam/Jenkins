@@ -9,11 +9,11 @@ IF (EXISTS (SELECT name
 FROM master.dbo.sysdatabases 
 WHERE ('[' + name + ']' = N'@SQLDB'
 OR name = N'@SQLDB')))
-       BEGIN
+       
 drop database N'@SQLDB' 
 
-END                                                         
-CREATE DATABASE  @SQLDB
+                                                     
+CREATE DATABASE  N'@SQLDB'
                                                                   
 
 
