@@ -7,7 +7,7 @@ declare @columnunderline varchar(max)
 set @column1caption='Table Name'
 set @column2caption='Column Name'
 
-set @columnunderline='-'
+set @columnunderline=' '
 
 select
 Case When Len(@column1caption) <= 50 
