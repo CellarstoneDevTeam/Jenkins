@@ -6,7 +6,7 @@ DECLARE @file_name_d nvarchar(200) = CONVERT(sysname, SERVERPROPERTY('InstanceDe
 DECLARE @file_name_l nvarchar(200) = CONVERT(sysname, SERVERPROPERTY('InstanceDefaultLogPath'))
 set @BackupFileName = '@SQLDB' + '.bak'''
 set @DBName = '@SQLDB'  + ''
-/*
+
 IF (EXISTS (SELECT name 
 FROM master.dbo.sysdatabases 
 WHERE ('[' + name + ']' = N'@DBName'
@@ -18,31 +18,32 @@ if len(@sqlstr)>0
 
 EXEC (@sqlstr);
             end                                                         
-set @sqlstr = 'create DATABASE '+ '@SQLDB'+' '                                                 
-EXEC (@sqlstr);
 go
-                                                                     */
+                                                                     
                                                                   
 drop database  @SQLDB
        go
 create database SQLDB
        go
+                                                                     declare @sqlstr varchar(max)
 set @sqlstr = 'ALTER DATABASE '+ '@SQLDB'+' '
 SET @sqlstr =  @sqlstr +'SET SINGLE_USER WITH '
 SET @sqlstr =  @sqlstr +'ROLLBACK IMMEDIATE'
 EXEC (@sqlstr);
-                                                                     
+    go
+                                                                     declare @sqlstr varchar(max)
 SET @SQL_SCRIPT = 'RESTORE DATABASE ' + '@SQLDB' + ' FROM DISK = '''+ @FTPPath + '\' + @BackupFileName + ' WITH REPLACE'
                                                                      
 /*use qcbuild
 delete from buildlog
-insert into buildlog (logtext) values (@SQL_SCRIPT)
+insert into buildlog (logtext) values (@SQL_SCRIPT)*/
 
-EXEC(@sql_script)*/
-
+EXEC(@sql_script)
+go
+                                                                     declare @sqlstr varchar(max)
 set @sqlstr = 'ALTER DATABASE ' + '@SQLDB'  + ' SET MULTI_USER'
 EXEC (@sqlstr);                                                                   
-
+go
 
 GO
 
