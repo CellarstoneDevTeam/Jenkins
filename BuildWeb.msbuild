@@ -68,7 +68,6 @@
             TargetPath="$(MSBuildProjectDirectory)\PrecompileFolder\$(ProjectName)"
             Force="true"
 			Updateable="true"
-			FixedNames="true"
 			/>
 			<FileUpdate 
                 Files="$(MSBuildProjectDirectory)\PrecompileFolder\$(ProjectName)\Web.Config"
