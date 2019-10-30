@@ -179,8 +179,8 @@
 	<Message Text="FTP Folder" />	
         <FtpUploadDirectoryContent 
                 ServerHost="$(ftpHost)"
-                Username="cellarstone"
-                Password="cellarstone1"
+                Username="$(FTPUserName)"
+                Password="$(FTPPassword)"
                 LocalDirectory="$(MSBuildProjectDirectory)\PrecompileFolder\$(ProjectName)"
                 RemoteDirectory="/"
                 Recursive="true" />
