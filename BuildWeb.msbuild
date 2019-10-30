@@ -181,7 +181,7 @@
                 ServerHost="$(ftpHost)"
                 Username="cellarstone"
                 Password="cellarstone1"
-                LocalDirectory="$(MSBuildProjectDirectory)\PrecompileFolder"
+                LocalDirectory="$(MSBuildProjectDirectory)\PrecompileFolder\$(ProjectName)"
                 RemoteDirectory="/"
                 Recursive="true" />
 	</Target>
