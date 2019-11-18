@@ -77,7 +77,7 @@ def Patch = env.Patch
 		echo 'Target Complete Build with FTP'
 		bat '''
         	"'''+ MSBuildPath +  '''" ''' +  buildscriptPath +'\\BuildWeb.msbuild'  +  ''' /t:CompleteBuild /p:Configuration=Release ''' + 
-        	''' /p:BuildProject="''' + ProjectName.replace(".sln","") +
+        	''' /p:BuildProject="''' + ProjectName +
 		'''" /p:FTPHOST=''' + FTPHOST +		
 		''' /p:FTPUserName=''' + FTPUserName +
 		''' /p:FTPPassword=''' + FTPPassword +
@@ -89,7 +89,7 @@ def Patch = env.Patch
 		echo 'Target after build only'
 		bat '''
 		"'''+ MSBuildPath +  '''" ''' +  buildscriptPath +'\\BuildWeb.msbuild'  +  ''' /t:AfterBuild /p:Configuration=Release ''' + 
-        	''' /p:BuildProject="''' + ProjectName.replace(".sln","") +
+        	''' /p:BuildProject="''' + ProjectName +
 		'''" /p:FTPHOST=''' + FTPHOST +		
 		''' /p:FTPUserName=''' + FTPUserName +
 		''' /p:FTPPassword=''' + FTPPassword +
