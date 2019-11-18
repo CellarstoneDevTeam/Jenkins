@@ -25,7 +25,7 @@
 		<ProjectFolder>FullPathofProjectFolder</ProjectFolder>
         <BuildProject>CalculationProcess</BuildProject>
         <!--<ProjectName>$(BuildProject.Replace(".sln","_Files"))</ProjectName>-->
-	<ProjectName>$(BuildProject) + "_Files"</ProjectName>
+	<ProjectName>"$(BuildProject)_Files"</ProjectName>
     </PropertyGroup>
 	<PropertyGroup>  
         <ProductName>Qcommission</ProductName>
