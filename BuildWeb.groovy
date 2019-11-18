@@ -56,9 +56,11 @@ def Patch = env.Patch
  def ProjectName = solution
             //Take the project name seperately
             ProjectName= ProjectName.substring(ProjectName.lastIndexOf("\\")+1)
+	 	print "project name1" + ProjectName	
+	    ProjectName= ProjectName.replace(".sln","")
             //Replace the project name with blank to get the full path alone
             def ProjectPath = solution.replace("\\"+ProjectName,"")
-	    print "project name" + ProjectName	
+	    print "project name2" + ProjectName	
 	    print "project path" + ProjectPath	
             //copy the build script file to the project path.
             def temp= solution
