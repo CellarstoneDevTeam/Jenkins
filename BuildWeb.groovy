@@ -56,8 +56,6 @@ def Patch = env.Patch
  def ProjectName = solution
             //Take the project name seperately
             ProjectName= ProjectName.substring(ProjectName.lastIndexOf("\\")+1)
-	 	print "project name1" + ProjectName	
-	    ProjectName= ProjectName.replace(".sln","")
             //Replace the project name with blank to get the full path alone
             def ProjectPath = solution.replace("\\"+ProjectName,"")
 	    print "project name2" + ProjectName	
@@ -79,7 +77,7 @@ def Patch = env.Patch
 		echo 'Target Complete Build with FTP'
 		bat '''
         	"'''+ MSBuildPath +  '''" ''' +  buildscriptPath +'\\BuildWeb.msbuild'  +  ''' /t:CompleteBuild /p:Configuration=Release ''' + 
-        	''' /p:BuildProject="''' + ProjectName +
+        	''' /p:BuildProject="''' + ProjectName.replace(".sln","") +
 		'''" /p:FTPHOST=''' + FTPHOST +		
 		''' /p:FTPUserName=''' + FTPUserName +
 		''' /p:FTPPassword=''' + FTPPassword +
@@ -91,7 +89,7 @@ def Patch = env.Patch
 		echo 'Target after build only'
 		bat '''
 		"'''+ MSBuildPath +  '''" ''' +  buildscriptPath +'\\BuildWeb.msbuild'  +  ''' /t:AfterBuild /p:Configuration=Release ''' + 
-        	''' /p:BuildProject="''' + ProjectName +
+        	''' /p:BuildProject="''' + ProjectName.replace(".sln","") +
 		'''" /p:FTPHOST=''' + FTPHOST +		
 		''' /p:FTPUserName=''' + FTPUserName +
 		''' /p:FTPPassword=''' + FTPPassword +
