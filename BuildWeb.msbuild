@@ -124,7 +124,6 @@
     	<Delete Files="@(FilesToDelete)" />   
     	<Message Text="Copy Plan Designer Directory" />	
 	    <Message Text="$(MSBuildProjectDirectory)\PrecompileFolder\$(ProjectName)\PlanDesigner_Report\%(RecursiveDir)" />
-	    <Message Text=$(MSBuildProjectDirectory)\PrecompileFolder\$(ProjectName)\PlanDesigner_Report\%(RecursiveDir) />
     	<Copy 
             SourceFiles="@(FilesToCopy_PlanDesigner)" 
             DestinationFolder="$(MSBuildProjectDirectory)\PrecompileFolder\$(ProjectName)\PlanDesigner_Report\%(RecursiveDir)" 
