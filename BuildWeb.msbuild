@@ -83,11 +83,11 @@
     <Target Name="AfterBuild" DependsOnTargets="CompileWeb">
 	    	<Message Text="After Build" />	
 	    <ItemGroup>
-		    <FilesToCopy_PlanDesigner Include="$(ProjectFolder)\PlanDesigner_Report\**\*.*"  Condition="$(BuildProject)=='QCommissionPortal.sln'" />
-		    <ReportComponents Include="$(ProjectFolder)\ReportComponents\**\*.*"  Condition="$(BuildProject)=='QCommissionPortal.sln'" />
-		    <ReportFiles Include="$(ProjectFolder)\ReportFiles\**\*.*"  Condition="$(BuildProject)=='QCommissionPortal.sln'" />
-		    <!--<SSOFiles Include="$(ProjectFolder)\..\QCommission Portal SSO\**\*.*"  Condition="$(BuildProject)=='QCommissionPortal.sln'" />-->
-		    <SSOFiles Include="$(MSBuildProjectDirectory)\PrecompileFolder\QCommission Portal SSO_Files\**\*.*"  Condition="$(BuildProject)=='QCommissionPortal.sln'" />
+		    <FilesToCopy_PlanDesigner Include="$(ProjectFolder)\PlanDesigner_Report\**\*.*"  Condition="$(BuildProject)=='QCommissionPortal'" />
+		    <ReportComponents Include="$(ProjectFolder)\ReportComponents\**\*.*"  Condition="$(BuildProject)=='QCommissionPortal'" />
+		    <ReportFiles Include="$(ProjectFolder)\ReportFiles\**\*.*"  Condition="$(BuildProject)=='QCommissionPortal'" />
+		    <!--<SSOFiles Include="$(ProjectFolder)\..\QCommission Portal SSO\**\*.*"  Condition="$(BuildProject)=='QCommissionPortal'" />-->
+		    <SSOFiles Include="$(MSBuildProjectDirectory)\PrecompileFolder\QCommission Portal SSO_Files\**\*.*"  Condition="$(BuildProject)=='QCommissionPortal'" />
             <CompleteArtifacts Include= "$(ProjectFolder)\PrecompileFolder\**\*.*" />
         </ItemGroup> 
 	    <ItemGroup>
@@ -99,27 +99,27 @@
 		    
 	    </ItemGroup>
 	    <ItemGroup>
-    		<FilesToCopy Include = "$(ProjectFolder)\maxblox.ini" Condition="$(BuildProject)=='QCommissionPortal.sln'"/>
-	    	<FilesToCopy Include = "$(ProjectFolder)\connection.ini" Condition="$(BuildProject)=='QCommissionPortal.sln'"/>
+    		<FilesToCopy Include = "$(ProjectFolder)\maxblox.ini" Condition="$(BuildProject)=='QCommissionPortal'"/>
+	    	<FilesToCopy Include = "$(ProjectFolder)\connection.ini" Condition="$(BuildProject)=='QCommissionPortal'"/>
 	    </ItemGroup>
     	<Message Text="Remove Directory" />	
-        <RemoveDir Directories="$(MSBuildProjectDirectory)\PrecompileFolder\$(ProjectName)\SSOLog" Condition="$(BuildProject)=='QCommission Portal SSO.sln'"/>
-	    <RemoveDir Directories="$(MSBuildProjectDirectory)\PrecompileFolder\$(ProjectName)\App_Data" Condition="$(BuildProject)=='QCommission Portal SSO.sln'" />
-    	<RemoveDir Directories="$(MSBuildProjectDirectory)\PrecompileFolder\$(ProjectName)\Company Registration\" Condition="$(BuildProject)=='QCommissionPortal.sln'"/>
-    	<RemoveDir Directories="$(MSBuildProjectDirectory)\PrecompileFolder\$(ProjectName)\Certificates" Condition="$(BuildProject)=='QCommissionPortal.sln'"/>
-	<RemoveDir Directories="$(MSBuildProjectDirectory)\PrecompileFolder\$(ProjectName)\report" Condition="$(BuildProject)=='QCommissionPortal.sln'"/>
-        <RemoveDir Directories="$(MSBuildProjectDirectory)\PrecompileFolder\$(ProjectName)\ReportComponents" Condition="$(BuildProject)=='QCommissionPortal.sln'"/>
-        <RemoveDir Directories="$(MSBuildProjectDirectory)\PrecompileFolder\$(ProjectName)\ReportFiles" Condition="$(BuildProject)=='QCommissionPortal.sln'" />
-        <RemoveDir Directories="$(MSBuildProjectDirectory)\PrecompileFolder\$(ProjectName)\Standard Reports" Condition="$(BuildProject)=='QCommissionPortal.sln'" />
-        <RemoveDir Directories="$(MSBuildProjectDirectory)\PrecompileFolder\$(ProjectName)\Standard Statements" Condition="$(BuildProject)=='QCommissionPortal.sln'" />
-        <RemoveDir Directories="$(MSBuildProjectDirectory)\PrecompileFolder\$(ProjectName)\tmp2DB_files" Condition="$(BuildProject)=='QCommissionPortal.sln'" />
-        <RemoveDir Directories="$(MSBuildProjectDirectory)\PrecompileFolder\$(ProjectName)\Validation Reports" Condition="$(BuildProject)=='QCommissionPortal.sln'" />
-        <RemoveDir Directories="$(MSBuildProjectDirectory)\PrecompileFolder\$(ProjectName)\PlanDesigner_Report" Condition="$(BuildProject)=='QCommissionPortal.sln'" />
-        <RemoveDir Directories="$(MSBuildProjectDirectory)\PrecompileFolder\$(ProjectName)\PlanDocuments" Condition="$(BuildProject)=='QCommissionPortal.sln'" />
-        <RemoveDir Directories="$(MSBuildProjectDirectory)\PrecompileFolder\$(ProjectName)\Open Transactions with Blank Payee ID.tmp_files" Condition="$(BuildProject)=='QCommissionPortal.sln'" />
-        <RemoveDir Directories="$(MSBuildProjectDirectory)\PrecompileFolder\$(ProjectName)\Uploads" Condition="$(BuildProject)=='QCommissionPortal.sln'" />
-	<RemoveDir Directories="$(MSBuildProjectDirectory)\PrecompileFolder\$(ProjectName)\App_Browsers" Condition="$(BuildProject)=='QCommissionPortal.sln'" />
-	<RemoveDir Directories="$(MSBuildProjectDirectory)\PrecompileFolder\$(ProjectName)\App_Data" Condition="$(BuildProject)=='QCommissionPortal.sln'" />
+        <RemoveDir Directories="$(MSBuildProjectDirectory)\PrecompileFolder\$(ProjectName)\SSOLog" Condition="$(BuildProject)=='QCommission Portal SSO'"/>
+	    <RemoveDir Directories="$(MSBuildProjectDirectory)\PrecompileFolder\$(ProjectName)\App_Data" Condition="$(BuildProject)=='QCommission Portal SSO'" />
+    	<RemoveDir Directories="$(MSBuildProjectDirectory)\PrecompileFolder\$(ProjectName)\Company Registration\" Condition="$(BuildProject)=='QCommissionPortal'"/>
+    	<RemoveDir Directories="$(MSBuildProjectDirectory)\PrecompileFolder\$(ProjectName)\Certificates" Condition="$(BuildProject)=='QCommissionPortal'"/>
+	<RemoveDir Directories="$(MSBuildProjectDirectory)\PrecompileFolder\$(ProjectName)\report" Condition="$(BuildProject)=='QCommissionPortal'"/>
+        <RemoveDir Directories="$(MSBuildProjectDirectory)\PrecompileFolder\$(ProjectName)\ReportComponents" Condition="$(BuildProject)=='QCommissionPortal'"/>
+        <RemoveDir Directories="$(MSBuildProjectDirectory)\PrecompileFolder\$(ProjectName)\ReportFiles" Condition="$(BuildProject)=='QCommissionPortal'" />
+        <RemoveDir Directories="$(MSBuildProjectDirectory)\PrecompileFolder\$(ProjectName)\Standard Reports" Condition="$(BuildProject)=='QCommissionPortal'" />
+        <RemoveDir Directories="$(MSBuildProjectDirectory)\PrecompileFolder\$(ProjectName)\Standard Statements" Condition="$(BuildProject)=='QCommissionPortal'" />
+        <RemoveDir Directories="$(MSBuildProjectDirectory)\PrecompileFolder\$(ProjectName)\tmp2DB_files" Condition="$(BuildProject)=='QCommissionPortal'" />
+        <RemoveDir Directories="$(MSBuildProjectDirectory)\PrecompileFolder\$(ProjectName)\Validation Reports" Condition="$(BuildProject)=='QCommissionPortal'" />
+        <RemoveDir Directories="$(MSBuildProjectDirectory)\PrecompileFolder\$(ProjectName)\PlanDesigner_Report" Condition="$(BuildProject)=='QCommissionPortal'" />
+        <RemoveDir Directories="$(MSBuildProjectDirectory)\PrecompileFolder\$(ProjectName)\PlanDocuments" Condition="$(BuildProject)=='QCommissionPortal'" />
+        <RemoveDir Directories="$(MSBuildProjectDirectory)\PrecompileFolder\$(ProjectName)\Open Transactions with Blank Payee ID.tmp_files" Condition="$(BuildProject)=='QCommissionPortal'" />
+        <RemoveDir Directories="$(MSBuildProjectDirectory)\PrecompileFolder\$(ProjectName)\Uploads" Condition="$(BuildProject)=='QCommissionPortal'" />
+	<RemoveDir Directories="$(MSBuildProjectDirectory)\PrecompileFolder\$(ProjectName)\App_Browsers" Condition="$(BuildProject)=='QCommissionPortal'" />
+	<RemoveDir Directories="$(MSBuildProjectDirectory)\PrecompileFolder\$(ProjectName)\App_Data" Condition="$(BuildProject)=='QCommissionPortal'" />
     	<Message Text="Remove files" />
     	<Delete Files="@(FilesToDelete)" />   
     	<Message Text="Copy Plan Designer Directory" />	
@@ -157,21 +157,21 @@
             Retries="3"
             RetryDelayMilliseconds="300"/>
     	<Message Text="Create Directory" />	
-	    <MakeDir Directories="$(MSBuildProjectDirectory)\PrecompileFolder\$(ProjectName)\PlanDocuments" Condition="$(BuildProject)=='QCommissionPortal.sln'"/>
-	    <MakeDir Directories="$(MSBuildProjectDirectory)\PrecompileFolder\$(ProjectName)\report" Condition="$(BuildProject)=='QCommissionPortal.sln'"/>
-	    <MakeDir Directories="$(MSBuildProjectDirectory)\PrecompileFolder\$(ProjectName)\Standard Reports" Condition="$(BuildProject)=='QCommissionPortal.sln'"/>
-	    <MakeDir Directories="$(MSBuildProjectDirectory)\PrecompileFolder\$(ProjectName)\Standard Statements" Condition="$(BuildProject)=='QCommissionPortal.sln'"/>
-	    <MakeDir Directories="$(MSBuildProjectDirectory)\PrecompileFolder\$(ProjectName)\Uploads" Condition="$(BuildProject)=='QCommissionPortal.sln'"/>
-	    <MakeDir Directories="$(MSBuildProjectDirectory)\PrecompileFolder\$(ProjectName)\Validation Reports" Condition="$(BuildProject)=='QCommissionPortal.sln'"/>
-	    <MakeDir Directories="$(MSBuildProjectDirectory)\PrecompileFolder\$(ProjectName)\SSO" Condition="$(BuildProject)=='QCommission Portal SSO.sln'"/>
-	    <MakeDir Directories="$(MSBuildProjectDirectory)\PrecompileFolder\$(ProjectName)\SSO\SSOLog" Condition="$(BuildProject)=='QCommission Portal SSO.sln'"/>
+	    <MakeDir Directories="$(MSBuildProjectDirectory)\PrecompileFolder\$(ProjectName)\PlanDocuments" Condition="$(BuildProject)=='QCommissionPortal'"/>
+	    <MakeDir Directories="$(MSBuildProjectDirectory)\PrecompileFolder\$(ProjectName)\report" Condition="$(BuildProject)=='QCommissionPortal'"/>
+	    <MakeDir Directories="$(MSBuildProjectDirectory)\PrecompileFolder\$(ProjectName)\Standard Reports" Condition="$(BuildProject)=='QCommissionPortal'"/>
+	    <MakeDir Directories="$(MSBuildProjectDirectory)\PrecompileFolder\$(ProjectName)\Standard Statements" Condition="$(BuildProject)=='QCommissionPortal'"/>
+	    <MakeDir Directories="$(MSBuildProjectDirectory)\PrecompileFolder\$(ProjectName)\Uploads" Condition="$(BuildProject)=='QCommissionPortal'"/>
+	    <MakeDir Directories="$(MSBuildProjectDirectory)\PrecompileFolder\$(ProjectName)\Validation Reports" Condition="$(BuildProject)=='QCommissionPortal'"/>
+	    <MakeDir Directories="$(MSBuildProjectDirectory)\PrecompileFolder\$(ProjectName)\SSO" Condition="$(BuildProject)=='QCommission Portal SSO'"/>
+	    <MakeDir Directories="$(MSBuildProjectDirectory)\PrecompileFolder\$(ProjectName)\SSO\SSOLog" Condition="$(BuildProject)=='QCommission Portal SSO'"/>
 	    <Message Text="Copy Files" />	
 	    <Copy
             SourceFiles="@(FilesToCopy)"
             DestinationFolder="$(ProjectFolder)\PrecompileFolder\" />
     </Target>
     <!-- Step 3 Copy files in one folder-->
-	<Target Name="CopyInOneFolder" DependsOnTargets="AfterBuild" Condition="$(BuildProject)=='QCommissionPortal.sln'" >
+	<Target Name="CopyInOneFolder" DependsOnTargets="AfterBuild" Condition="$(BuildProject)=='QCommissionPortal'" >
 	    <Message Text="Copy in One Folder" />	
 	    <Copy 
                 SourceFiles="@(CompleteArtifacts)" 
@@ -182,7 +182,7 @@
                 RetryDelayMilliseconds="300"/>
     </Target>
     <!-- Step 4 FTP Folder-->
-    <Target Name="FTPUpload" DependsOnTargets="AfterBuild" Condition="$(BuildProject)=='QCommissionPortal.sln'" >   
+    <Target Name="FTPUpload" DependsOnTargets="AfterBuild" Condition="$(BuildProject)=='QCommissionPortal'" >   
 	<Message Text="FTP Folder" />	
         <FtpUploadDirectoryContent 
                 ServerHost="$(ftpHost)"
