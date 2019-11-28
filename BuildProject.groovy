@@ -176,7 +176,7 @@ stage(QCVSSProjectFolder + ' Get Source from VSS')
             //Get the output assembly Name it can be exe or dll
             def assembly = getassemblyname("$it")
             println "copy " + dllpath +  "\\bin\\debug\\" + assembly + " " + QCVSSWorkFolder.replace("\\\\", "\\") + "\\" + QCEXEDllCopyPath + " /y"    
-	    bat '\"%DigitalSignPath%\\signtool\" sign /f \"%DigitalSignPath%\\mypfxfile.pfx\" /p %DigitalSignPassword% /t http://timestamp.verisign.com/scripts/timstamp.dll \"' + dllpath + "\\bin\\release" +"\\" + assembly   		
+	    bat '\"%DigitalSignPath%\\signtool\" sign /f \"%DigitalSignPath%\\mypfxfile.pfx\" /p %DigitalSignPassword% /t http://timestamp.verisign.com/scripts/timstamp.dll \"' + dllpath + "\\bin\\debug" +"\\" + assembly   		
             //Copy the assembly file to reference folder - The following projects compiling will refresh the dependancy dlls from this folder
             bat "copy  " + dllpath +  "\\bin\\debug\\" + assembly + " " + QCVSSWorkFolder.replace("\\\\", "\\") + "\\" + QCEXEDllCopyPath + " /y"    
         }
