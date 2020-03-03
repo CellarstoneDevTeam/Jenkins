@@ -192,6 +192,7 @@
                 RemoteDirectory="/"
                 Recursive="true" />
 	</Target>
+	
     <!-- Step 5 Completing the process and display the URL-->
     
     <Target Name="CompleteBuild" DependsOnTargets="FTPUpload">
@@ -209,6 +210,12 @@
                 RemoteDirectory="/"
                 Recursive="true" />
     </Target>
+	<!-- Step For minification -->
+	<Target Name="MinificationProcess" DependsOnTargets="CompileWeb">
+		<Message Text="Minification Process started." />
+		<Exec Command="&quot;$(Minifier)&quot; MinifyRecent ExitAfterMinify" ConsoleToMsBuild="true" />
+		<Message Text="Minification Process completed." />
+	</Target>
     <!-- Step 6 Restore The DB-->
     <Target Name="RestoreDB" DependsOnTargets="FTPDBCopy">
 	    <Message Text="QCOMM DB Restore" />	
