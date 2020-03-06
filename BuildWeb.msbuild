@@ -8,7 +8,7 @@
 	<FTPUserName>Cellarstone</FTPUserName>
 	<FTPPassword>Cellarstone1</FTPPassword>
 	<FTPFolder>'D:\FTPDevServer'</FTPFolder> 
-	 
+	<Minifier>$(MinifierPath)</Minifier>
     </PropertyGroup>
     <PropertyGroup>
         <SQLDatasource>10.199.4.19</SQLDatasource>
@@ -192,6 +192,12 @@
                 LocalDirectory="$(MSBuildProjectDirectory)\PrecompileFolder\$(ProjectName)"
                 RemoteDirectory="/"
                 Recursive="true" />
+	</Target>
+	
+	<Target Name="MinificationProcess" DependsOnTargets="CompileWeb">
+		<Message Text="Minification Process started." />
+		<Exec Command="&quot;D:\Minifier\Minifier.exe&quot; MinifyRecent ExitAfterMinify" ConsoleToMsBuild="true" />
+		<Message Text="Minification Process completed." />
 	</Target>
 	
     <!-- Step 5 Completing the process and display the URL-->
