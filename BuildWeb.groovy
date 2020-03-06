@@ -52,7 +52,7 @@ def FTPPassword = env.FTPPassword
 def Release = env.Release
 def Build = env.Build
 def Patch = env.Patch
-def MinifierPath = env.QCMinifier
+
 	
 
  def ProjectName = solution
@@ -83,8 +83,8 @@ def MinifierPath = env.QCMinifier
 		'''" /p:FTPHOST=''' + FTPHOST +		
 		''' /p:FTPUserName=''' + FTPUserName +
 		''' /p:FTPPassword=''' + FTPPassword +
-        	''' /p:ProjectFolder="''' + ProjectPath + 
-		''' /p:MinifierPath="''' + MinifierPath + '''"'''
+        	''' /p:ProjectFolder="''' + ProjectPath + '''"'''
+		 
 		
 	
 	}
@@ -97,8 +97,8 @@ def MinifierPath = env.QCMinifier
 		'''" /p:FTPHOST=''' + FTPHOST +		
 		''' /p:FTPUserName=''' + FTPUserName +
 		''' /p:FTPPassword=''' + FTPPassword +
-        	''' /p:ProjectFolder="''' + ProjectPath + 
-		''' /p:MinifierPath="''' + MinifierPath + '''"'''
+        	''' /p:ProjectFolder="''' + ProjectPath + '''"'''
+		
 		
 	}
 }
