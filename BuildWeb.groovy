@@ -85,7 +85,7 @@ def MinifierPath = env.MBMinifier
 		''' /p:FTPUserName=''' + FTPUserName +
 		''' /p:FTPPassword=''' + FTPPassword +
         	''' /p:ProjectFolder=''' + ProjectPath + 
-		''' /p:MinifierPath="''' + MinifierPath	+ '''"'''
+		''' /p:MinifierPath="''' + D:\Minifier\Minifier.exe	+ '''"'''
 		 
 		
 	
@@ -100,7 +100,7 @@ def MinifierPath = env.MBMinifier
 		''' /p:FTPUserName=''' + FTPUserName +
 		''' /p:FTPPassword=''' + FTPPassword +
         	''' /p:ProjectFolder=''' + ProjectPath + 
-		''' /p:MinifierPath="''' + MinifierPath	+ '''"'''
+		''' /p:MinifierPath="''' + D:\Minifier\Minifier.exe	+ '''"'''
 		
 		
 	}
