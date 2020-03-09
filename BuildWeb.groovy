@@ -52,6 +52,7 @@ def FTPPassword = env.FTPPassword
 def Release = env.Release
 def Build = env.Build
 def Patch = env.Patch
+def MinifierPath = env.MBMinifier
 
 	
 
@@ -83,7 +84,8 @@ def Patch = env.Patch
 		'''" /p:FTPHOST=''' + FTPHOST +		
 		''' /p:FTPUserName=''' + FTPUserName +
 		''' /p:FTPPassword=''' + FTPPassword +
-        	''' /p:ProjectFolder="''' + ProjectPath + '''"'''
+        	''' /p:ProjectFolder="''' + ProjectPath + 
+		''' /p:MinifierPath="''' + MinifierPath	+ '''"'''
 		 
 		
 	
@@ -97,7 +99,8 @@ def Patch = env.Patch
 		'''" /p:FTPHOST=''' + FTPHOST +		
 		''' /p:FTPUserName=''' + FTPUserName +
 		''' /p:FTPPassword=''' + FTPPassword +
-        	''' /p:ProjectFolder="''' + ProjectPath + '''"'''
+        	''' /p:ProjectFolder="''' + ProjectPath + 
+		''' /p:MinifierPath="''' + MinifierPath	+ '''"'''
 		
 		
 	}
