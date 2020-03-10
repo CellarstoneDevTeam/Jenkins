@@ -196,7 +196,7 @@
 	<!-- Minification process-->
 	<Target Name="MinificationProcess" DependsOnTargets="CompileWeb">
 		<Message Text="Minification Process started." />
-		<Exec Command="&quot;D:\Minifier\Minifier.exe&quot; MinifyRecent ExitAfterMinify" ConsoleToMsBuild="true" />
+		<Exec Command="&quot;$(Minifier)&quot; MinifyRecent ExitAfterMinify" ConsoleToMsBuild="true" />
 		<Message Text="Minification Process completed." />
 	</Target>
 	
