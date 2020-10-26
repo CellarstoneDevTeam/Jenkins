@@ -68,13 +68,13 @@ def Patch = env.Patch
         "'''+ MSBuildPath +  '''" ''' + solution  +  ''' /t:Build /p:Configuration=Debug /p:TargetFramework=v4.6.1 /p:version=''' + version */
  print '''
         "'''+ MSBuildPath +  '''" ''' +  buildscriptPath +'\\BuildProject.msbuild'  +  ''' /p:Configuration=Release /p:TargetFramework=v4.6.1 /p:major=''' + MajorVersion + 
-        ''' /p:Release=''' + Release   + ''' /p:Build=''' + Build  + ''' /p:Patch=''' + Patch +
+        ''' /p:Release=''' + Release   + ''' /p:Build=''' + Build  + ''' /p:Patch=''' + Patch + ''' /p:Platform="x86" +
         ''' /p:BuildProject=''' + ProjectName +
         ''' /p:ProjectFolder=''' + ProjectPath
 	
 	bat '''
         "'''+ MSBuildPath +  '''" ''' +  buildscriptPath +'\\BuildProject.msbuild'  +  ''' /p:Configuration=Release /p:TargetFramework=v4.6.1 /p:major=''' + MajorVersion + 
-        ''' /p:Release=''' + Release   + ''' /p:Build=''' + Build  + ''' /p:Patch=''' + Patch +
+        ''' /p:Release=''' + Release   + ''' /p:Build=''' + Build  + ''' /p:Patch=''' + Patch +  ''' /p:Platform=AnyCPU +
         ''' /p:BuildProject=''' + ProjectName +
         ''' /p:ProjectFolder=''' + ProjectPath
 }
