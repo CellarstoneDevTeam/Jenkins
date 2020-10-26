@@ -74,7 +74,7 @@ def Patch = env.Patch
 	
 	bat '''
         "'''+ MSBuildPath +  '''" ''' +  buildscriptPath +'\\BuildProject.msbuild'  +  ''' /p:Configuration=Release /p:TargetFramework=v4.6.1 /p:major=''' + MajorVersion + 
-        ''' /p:Release=''' + Release   + ''' /p:Build=''' + Build  + ''' /p:Patch=''' + Patch +  ''' /p:Platform=AnyCPU +
+        ''' /p:Release=''' + Release   + ''' /p:Build=''' + Build  + ''' /p:Patch=''' + Patch +  ''' /p:Platform=AnyCPU +  '''+
         ''' /p:BuildProject=''' + ProjectName +
         ''' /p:ProjectFolder=''' + ProjectPath
 }
