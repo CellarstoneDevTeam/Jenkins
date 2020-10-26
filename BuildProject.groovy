@@ -49,7 +49,7 @@ def MajorVersion = env.MajorVersion
 def Release = env.Release
 def Build = env.Build
 def Patch = env.Patch
-def Platform = "AnyCPU"
+def Platform = "Any CPU"
  def ProjectName = solution
             //Take the project name seperately
             ProjectName= ProjectName.substring(ProjectName.lastIndexOf("\\")+1)
