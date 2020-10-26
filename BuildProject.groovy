@@ -49,7 +49,7 @@ def MajorVersion = env.MajorVersion
 def Release = env.Release
 def Build = env.Build
 def Patch = env.Patch
-
+def Platform = "AnyCPU"
  def ProjectName = solution
             //Take the project name seperately
             ProjectName= ProjectName.substring(ProjectName.lastIndexOf("\\")+1)
@@ -74,7 +74,7 @@ def Patch = env.Patch
 	
 	bat '''
         "'''+ MSBuildPath +  '''" ''' +  buildscriptPath +'\\BuildProject.msbuild'  +  ''' /p:Configuration=Release /p:TargetFramework=v4.6.1 /p:major=''' + MajorVersion + 
-        ''' /p:Release=''' + Release   + ''' /p:Build=''' + Build  + ''' /p:Patch=''' + Patch +  ''' /p:Platform=AnyCPU +  '''+
+        ''' /p:Release=''' + Release   + ''' /p:Build=''' + Build  + ''' /p:Patch=''' + Patch + ''' /p:Platform=''' + Platform + 
         ''' /p:BuildProject=''' + ProjectName +
         ''' /p:ProjectFolder=''' + ProjectPath
 }
