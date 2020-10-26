@@ -75,7 +75,7 @@ def Platform = "Any CPU"
 	bat '''
         "'''+ MSBuildPath +  '''" ''' +  buildscriptPath +'\\BuildProject.msbuild'  +  ''' /p:Configuration=Release /p:TargetFramework=v4.6.1 /p:major=''' + MajorVersion + 
         ''' /p:Release=''' + Release   + ''' /p:Build=''' + Build  + ''' /p:Patch=''' + Patch + ''' /p:Platform="''' + Platform + 
-        ''' "/p:BuildProject=''' + ProjectName +
+        '''" /p:BuildProject=''' + ProjectName +
         ''' /p:ProjectFolder=''' + ProjectPath
 }
 
