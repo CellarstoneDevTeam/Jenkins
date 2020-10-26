@@ -66,7 +66,13 @@ def Patch = env.Patch
 
  /*bat '''
         "'''+ MSBuildPath +  '''" ''' + solution  +  ''' /t:Build /p:Configuration=Debug /p:TargetFramework=v4.6.1 /p:version=''' + version */
- bat '''
+ print '''
+        "'''+ MSBuildPath +  '''" ''' +  buildscriptPath +'\\BuildProject.msbuild'  +  ''' /p:Configuration=Release /p:TargetFramework=v4.6.1 /p:major=''' + MajorVersion + 
+        ''' /p:Release=''' + Release   + ''' /p:Build=''' + Build  + ''' /p:Patch=''' + Patch +
+        ''' /p:BuildProject=''' + ProjectName +
+        ''' /p:ProjectFolder=''' + ProjectPath
+	
+	bat '''
         "'''+ MSBuildPath +  '''" ''' +  buildscriptPath +'\\BuildProject.msbuild'  +  ''' /p:Configuration=Release /p:TargetFramework=v4.6.1 /p:major=''' + MajorVersion + 
         ''' /p:Release=''' + Release   + ''' /p:Build=''' + Build  + ''' /p:Patch=''' + Patch +
         ''' /p:BuildProject=''' + ProjectName +
