@@ -50,8 +50,8 @@ def Release = env.Release
 def Build = env.Build
 def Patch = env.Patch
 def Platform = "Any CPU"
-def OutputPath = "obj\Release"
- def ProjectName = solution
+def OutputPath = "Obj\\Release"
+def ProjectName = solution
             //Take the project name seperately
             ProjectName= ProjectName.substring(ProjectName.lastIndexOf("\\")+1)
             //Replace the project name with blank to get the full path alone
