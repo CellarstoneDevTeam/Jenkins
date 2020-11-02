@@ -227,7 +227,7 @@ stage('Get Code from VSS')
             //Replace the project name with blank to get the full path alone
             def dllpath = "$it".replace(dllname,"")
 		print dllname
-           // compilesolution("$it")
+            compilesolution("$it")
         }
      }
 }
