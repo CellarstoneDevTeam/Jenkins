@@ -13,6 +13,8 @@ def getsolutionlist(path) {
 	    {//If project name contains TEST don't compile
         }
          else {
+		 
+		 print "file solution" + filesolution	
 	 	 list.add(filesolution)}
 	}
 	File fileDir=new File(path)
@@ -177,6 +179,8 @@ def SSDir = env.SSDir
 
 String QCVSSFolder= env.QCVSSFolder
 String Precompilefolder =""
+	if (1=0)
+	{
 stage('Get Code from VSS')
     { 
       
@@ -209,6 +213,7 @@ stage('Get Code from VSS')
 
 
      } 
+	}
      stage('Compile Project and Copy DLLS')
      {
         //Get project file with full path
@@ -221,7 +226,8 @@ stage('Get Code from VSS')
             dllname= dllname.substring(dllname.lastIndexOf("\\"))
             //Replace the project name with blank to get the full path alone
             def dllpath = "$it".replace(dllname,"")
-            compilesolution("$it")
+		print dllname
+           // compilesolution("$it")
         }
      }
 }
