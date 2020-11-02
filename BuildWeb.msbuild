@@ -81,7 +81,8 @@
                 ReplacementText="key=&quot;isSecure&quot; value=&quot;true&quot;" />
     </Target>    
      <!-- Step 2  Clean up Directories-->
-    <Target Name="AfterBuild" DependsOnTargets="CompileWeb">
+    <Target Name="AfterBuild">
+	   <!--- <Target Name="AfterBuild" DependsOnTargets="CompileWeb"---!>
 	    	<Message Text="After Build" />	
 	    <ItemGroup>
 		    <FilesToCopy_PlanDesigner Include="$(ProjectFolder)\PlanDesigner_Report\**\*.*"  Condition="$(BuildProject)=='QCommissionPortal'" />
