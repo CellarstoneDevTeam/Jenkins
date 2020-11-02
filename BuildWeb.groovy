@@ -9,7 +9,7 @@ def getsolutionlist(path) {
   def filessolution = findersolution.getFileNames path, '**/*.sln'
   list = new ArrayList()
 	for (String filesolution : filessolution) {
-	    if (filesolution.contains('Test')  || filesolution.contains('maxblox') || filesolution.contains('sln (') || filesolution.contains('DBST1'))
+	    if (filesolution.contains('Test')  || filesolution.contains('MaxBlox') || filesolution.contains('sln (') || filesolution.contains('DBST1'))
 	    {//If project name contains TEST don't compile
         }
          else {
