@@ -81,7 +81,7 @@ def MinifierPath = env.MinifierPath
 		
 		echo 'Target Complete Build with FTP'
 		bat '''
-        	"'''+ MSBuildPath +  '''" ''' +  buildscriptPath +'\\BuildWeb.msbuild'  +  ''' /t:MinificationProcess /t:CompleteBuild /p:Configuration=Release ''' + 
+        	"'''+ MSBuildPath +  '''" ''' +  buildscriptPath +'\\BuildWeb.msbuild'  +  '''  /t:CompleteBuild /p:Configuration=Release ''' + 
         	''' /p:BuildProject="''' + ProjectName.replace(".sln","") +
 		'''" /p:FTPHOST=''' + FTPHOST +		
 		''' /p:FTPUserName=''' + FTPUserName +
@@ -96,7 +96,7 @@ def MinifierPath = env.MinifierPath
 	{
 		echo 'Target after build only'
 		bat '''
-		"'''+ MSBuildPath +  '''" ''' +  buildscriptPath +'\\BuildWeb.msbuild'  +  ''' /t:MinificationProcess /p:Configuration=Release ''' + 
+		"'''+ MSBuildPath +  '''" ''' +  buildscriptPath +'\\BuildWeb.msbuild'  +  '''  /p:Configuration=Release ''' + 
         	''' /p:BuildProject="''' + ProjectName.replace(".sln","") +
 		'''" /p:FTPHOST=''' + FTPHOST +		
 		''' /p:FTPUserName=''' + FTPUserName +
