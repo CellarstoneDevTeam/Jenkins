@@ -196,7 +196,7 @@
                 Recursive="true" />
 	</Target>
 	<!-- Minification process-->
-	<Target Name="MinificationProcess" DependsOnTargets="AfterBuild">
+	<Target Name="MinificationProcess" DependsOnTargets="AfterBuild" UploadToFTP="YES">
 		<Message Text="Minification Process started." />
 		<Exec Command="&quot;$(Minifier)&quot; MinifyRecent ExitAfterMinify" ConsoleToMsBuild="true" />
 		<Message Text="Minification Process completed." />
