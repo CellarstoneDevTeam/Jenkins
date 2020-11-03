@@ -81,8 +81,8 @@
                 ReplacementText="key=&quot;isSecure&quot; value=&quot;true&quot;" />
     </Target>    
      <!-- Step 2  Clean up Directories-->
-    <Target Name="AfterBuild">
-	   <!--- <Target Name="AfterBuild" DependsOnTargets="CompileWeb"---!>
+    
+	    <Target Name="AfterBuild" DependsOnTargets="CompileWeb">
 	    	<Message Text="After Build" />	
 	    <ItemGroup>
 		    <FilesToCopy_PlanDesigner Include="$(ProjectFolder)\PlanDesigner_Report\**\*.*"  Condition="$(BuildProject)=='QCommissionPortal'" />
@@ -184,7 +184,8 @@
                 RetryDelayMilliseconds="300"/>
     </Target>
     <!-- Step 4 FTP Folder-->
-    <Target Name="FTPUpload" DependsOnTargets="AfterBuild" Condition="$(BuildProject)=='QCommissionPortal'" >   
+   <Target Name="FTPUpload" DependsOnTargets="MinificationProcess" Condition="$(BuildProject)=='QCommissionPortal'" >
+    <!--<Target Name="FTPUpload" DependsOnTargets="AfterBuild" Condition="$(BuildProject)=='QCommissionPortal'" >-->   
 	<Message Text="FTP Folder" />	
         <FtpUploadDirectoryContent 
                 ServerHost="$(ftpHost)"
@@ -195,7 +196,7 @@
                 Recursive="true" />
 	</Target>
 	<!-- Minification process-->
-	<Target Name="MinificationProcess" DependsOnTargets="CompileWeb">
+	<Target Name="MinificationProcess" DependsOnTargets="AfterBuild">
 		<Message Text="Minification Process started." />
 		<Exec Command="&quot;$(Minifier)&quot; MinifyRecent ExitAfterMinify" ConsoleToMsBuild="true" />
 		<Message Text="Minification Process completed." />
