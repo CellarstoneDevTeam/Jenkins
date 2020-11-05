@@ -179,8 +179,7 @@ def SSDir = env.SSDir
 
 String QCVSSFolder= env.QCVSSFolder
 String Precompilefolder =""
-	if (1 == 0)
-	{
+	
 stage('Get Code from VSS')
     { 
       
@@ -213,7 +212,7 @@ stage('Get Code from VSS')
 
 
      } 
-	}
+	
      stage('Compile Project and Copy DLLS')
      {
         //Get project file with full path
