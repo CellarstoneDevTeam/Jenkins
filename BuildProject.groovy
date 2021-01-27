@@ -179,6 +179,7 @@ stage(QCVSSProjectFolder + ' Get Source from VSS')
 	    println " If Exist " + QCVSSWorkFolder.replace("\\\\", "\\") + "\\References copy " + QCVSSWorkFolder.replace("\\\\", "\\") + "\\References " + dllpath +  "\\bin"	
 	    println "solution" + "$it"
                 println "before bat"
+		println "dllpath=" + dllpath
 		bat " If Exist " + QCVSSWorkFolder.replace("\\\\", "\\") + "\\References copy " + QCVSSWorkFolder.replace("\\\\", "\\") + "\\References " + dllpath +  "\\bin"
 	 println "after bat"
             compilesolution("$it")
