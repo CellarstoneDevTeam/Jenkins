@@ -180,7 +180,7 @@ stage(QCVSSProjectFolder + ' Get Source from VSS')
 	    println "solution" + "$it"
                 println "before bat"
 		println "dllpath=" + dllpath
-		bat " If Exist " + QCVSSWorkFolder.replace("\\\\", "\\") + "\\References copy " + QCVSSWorkFolder.replace("\\\\", "\\") + "\\References " + dllpath +  "\\bin"
+		//bat " If Exist " + QCVSSWorkFolder.replace("\\\\", "\\") + "\\References copy " + QCVSSWorkFolder.replace("\\\\", "\\") + "\\References " + dllpath +  "\\bin"
 	 println "after bat"
             compilesolution("$it")
             //Get the output assembly Name it can be exe or dll
