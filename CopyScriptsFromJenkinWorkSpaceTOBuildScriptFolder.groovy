@@ -6,7 +6,7 @@ node
     def QCommDBPath=env.QCommDBPath
     def QCVSSWorkFolder= env.QCVSSWorkFolder
      /*bat " If not Exist " + QCVSSWorkFolder.replace("\\\\", "\\") + "\\References copy " + QCVSSWorkFolder.replace("\\\\", "\\") + "\\References " + dllpath +  "\\bin"*/
-      bat " If not Exist " + QCVSSWorkFolder.replace("\\\\", "\\") + "\\BuildScript" "mkdir \"" + QCVSSWorkFolder.replace("\\\\", "\\") + "\\BuildScript"
+      bat " If not Exist " + QCVSSWorkFolder.replace("\\\\", "\\") + "\\BuildScript" + " mkdir \"" + QCVSSWorkFolder.replace("\\\\", "\\") + "\\BuildScript"
      bat "copy \"" + "$WORKSPACE" + '\\..\\GetBuildScriptFromGit\\*.*\" ' +  QCVSSWorkFolder.replace("\\\\", "\\") + "\\BuildScript"
      echo "copy \"" + QCommDBPath + '\\*.*\" ' +  QCVSSWorkFolder.replace("\\\\", "\\") + "\\BuildScript" 
     echo "if not exist " +  QCVSSWorkFolder.replace("\\\\", "\\") + "\\BuildScript\\DBBackup" + " mkdir " +  QCVSSWorkFolder.replace("\\\\", "\\") + "\\BuildScript\\DBBackup"  
