@@ -178,8 +178,9 @@ stage(QCVSSProjectFolder + ' Get Source from VSS')
             //println "copy " + QCVSSWorkFolder.replace("\\\\", "\\") + "\\References " + dllpath +  "\\bin"
 	    println " If Exist " + QCVSSWorkFolder.replace("\\\\", "\\") + "\\References copy " + QCVSSWorkFolder.replace("\\\\", "\\") + "\\References " + dllpath +  "\\bin"	
 	    println "solution" + "$it"
-            bat " If Exist " + QCVSSWorkFolder.replace("\\\\", "\\") + "\\References copy " + QCVSSWorkFolder.replace("\\\\", "\\") + "\\References " + dllpath +  "\\bin"
-	    println "before compile"
+                println "before bat"
+		bat " If Exist " + QCVSSWorkFolder.replace("\\\\", "\\") + "\\References copy " + QCVSSWorkFolder.replace("\\\\", "\\") + "\\References " + dllpath +  "\\bin"
+	 println "after bat"
             compilesolution("$it")
             //Get the output assembly Name it can be exe or dll
             def assembly = getassemblyname("$it")
