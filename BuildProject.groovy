@@ -176,7 +176,8 @@ stage(QCVSSProjectFolder + ' Get Source from VSS')
 
             //Copy all dlls from reference folder- This is to resolve any dependancy issues.
             //println "copy " + QCVSSWorkFolder.replace("\\\\", "\\") + "\\References " + dllpath +  "\\bin"
-	    println " If Exist " + QCVSSWorkFolder.replace("\\\\", "\\") + "\\References copy " + QCVSSWorkFolder.replace("\\\\", "\\") + "\\References " + dllpath +  "\\bin"	
+	    println " If Exist " + QCVSSWorkFolder.replace("\\\\", "\\") + "\\References copy " + QCVSSWorkFolder.replace("\\\\", "\\") + "\\References " + dllpath +  "\\bin"
+		   bat " If Exist " + QCVSSWorkFolder.replace("\\\\", "\\") + "\\References copy " + QCVSSWorkFolder.replace("\\\\", "\\") + "\\References " + dllpath +  "\\bin"	
 	    println "solution" + "$it"
                 println "before bat"
 		println "dllpath=" + dllpath
