@@ -181,8 +181,8 @@ stage(QCVSSProjectFolder + ' Get Source from VSS')
 		{ 
 			//println " If Exist " + QCVSSWorkFolder.replace("\\\\", "\\") + "\\" + QCEXEDllCopyPath+" copy " + QCVSSWorkFolder.replace("\\\\", "\\") + "\\"+ QCEXEDllCopyPath+" "  + dllpath +  "\\bin"
 	  		//bat " If Exist " + QCVSSWorkFolder.replace("\\\\", "\\") + "\\"+QCEXEDllCopyPath+" copy " + QCVSSWorkFolder.replace("\\\\", "\\") + "\\"+ QCEXEDllCopyPath+" "  + dllpath +  "\\bin"	
-		println " If Exist " + QCVSSWorkFolder.replace("\\\\", "\\") + "\\References_x64 copy " + QCVSSWorkFolder.replace("\\\\", "\\") + "\\References_x64 " + dllpath +  "\\bin\\x64"
-	   	 bat " If Exist " + QCVSSWorkFolder.replace("\\\\", "\\") + "\\References_x64 copy " + QCVSSWorkFolder.replace("\\\\", "\\") + "\\References_x64 " + dllpath +  "\\bin\\x64"	
+		println " If Exist " + QCVSSWorkFolder.replace("\\\\", "\\") + "\\References_x64 copy " + QCVSSWorkFolder.replace("\\\\", "\\") + "\\References_x64 " + dllpath +  "\\bin"
+	   	 bat " If Exist " + QCVSSWorkFolder.replace("\\\\", "\\") + "\\References_x64 copy " + QCVSSWorkFolder.replace("\\\\", "\\") + "\\References_x64 " + dllpath +  "\\bin"	
 		
 		}
 		else
