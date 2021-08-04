@@ -49,7 +49,8 @@ def MajorVersion = env.MajorVersion
 def Release = env.Release
 def Build = env.Build
 def Patch = env.Patch
-def Platform = "Any CPU"
+def Platform = "${params.Platform}"
+//def Platform = "Any CPU"
 def OutputPath = "Obj\\Release"
 def ProjectName = solution
             //Take the project name seperately
