@@ -213,7 +213,15 @@ stage('Get Code from VSS')
 	    
 	 git credentialsId: 'qc-robot',url: 'http://code.cellarstone.com:3000/QCommission/QCommissionPortal.git'
 
+	  if ( QCVSSProjectFolder== "QCommission Portal SSO")
+	    {
+		print 'SSO Project skipped copying'
+	    }
+	    else
+	    {
+	    
           bat "copy \"" + "$WORKSPACE" + '\\' + QCVSSProjectFolder +'\\*.*\" ' +  QCVSSWorkFolder.replace("\\\\", "\\") + "\\QCommissionPortal"
+	    }
      } 
 	
      stage('Compile Project and Copy DLLS')
