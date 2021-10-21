@@ -204,11 +204,14 @@ stage('Get Code from VSS')
 	 rd /s /q "''' + QCVSSProjectFolder+Precompilefolder + '''"''' + ''' */
 	    
 
- 	 bat '''  cd /d ''' + QCVSSWorkFolder + '''
+ 	/* bat '''  cd /d ''' + QCVSSWorkFolder + '''
 	 rd /s /q "''' + Precompilefolder + '''"''' + '''
          SET SSDIR='''  + SSDir   + '''
         "'''+ VSSPath + ''' CP "''' + QCVSSFolder + '//'+ QCVSSProjectFolder  + '''"''' +  '''
         "'''+     VSSPath + ''' Get * -R -W -I-Y" '''
+	*/
+	    
+	 git credentialsId: 'qc-robot',url: 'http://code.cellarstone.com:3000/QCommission/QCommissionPortal.git'
 
 
      } 
