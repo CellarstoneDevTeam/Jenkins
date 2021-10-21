@@ -213,7 +213,7 @@ stage('Get Code from VSS')
 	    
 	 git credentialsId: 'qc-robot',url: 'http://code.cellarstone.com:3000/QCommission/QCommissionPortal.git'
 
-          bat "copy \"" + "$WORKSPACE" + '\\*.*\" ' +  QCVSSWorkFolder.replace("\\\\", "\\") + "\\QCommissionPortal"
+          bat "copy \"" + "$WORKSPACE" + '\\' + QCVSSProjectFolder +'\\*.*\" ' +  QCVSSWorkFolder.replace("\\\\", "\\") + "\\QCommissionPortal"
      } 
 	
      stage('Compile Project and Copy DLLS')
