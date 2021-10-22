@@ -188,7 +188,7 @@ stage('Get Code from VSS')
 	 if (CleanBuild =="No")
 	    {
 		/*Delete only the precompilefolder */
-		Precompilefolder = "BuildScript\\PrecompileFolder\\" + QCVSSProjectFolder 
+		Precompilefolder = "\\BuildScript\\PrecompileFolder\\" + QCVSSProjectFolder 
 	    }
 	  else
 	  {
