@@ -222,7 +222,7 @@ stage('Get Code from VSS')
 	    }
 	    else
 	    {
-	     print 'xcopy' + "$WORKSPACE"
+	     print 'xcopy ' + "$WORKSPACE" + '\\' + QCVSSProjectFolder 
 	     
 		    
              /* print "xcopy \"" + "$WORKSPACE" + '\\' + QCVSSProjectFolder + '\\" \" '  +  QCVSSWorkFolder.replace("\\\\", "\\") + "\\QCommissionPortal /E/H/I\"  */
