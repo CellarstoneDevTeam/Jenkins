@@ -193,7 +193,8 @@ stage('Get Code from VSS')
 	  else
 	  {
 		/*Delete entire source */
-		Precompilefolder = "\\" + QCVSSProjectFolder 
+		//Precompilefolder = "\\" + QCVSSProjectFolder 
+		  Precompilefolder = "BuildScript\\PrecompileFolder\\" + QCVSSProjectFolder 
 	  }
 	    
 /*	    bat ''' d:
@@ -215,9 +216,12 @@ stage('Get Code from VSS')
 	    }
 	    else
 	    {
-		       bat '''  cd /d ''' + QCVSSWorkFolder + '''
+		      bat '''  cd /d ''' + QCVSSWorkFolder + '''
+	 rd /s /q "''' + Precompilefolder + '''_Files"''' + Precompilefolder + '''_Files"'''
+		    
+		    /*       bat '''  cd /d ''' + QCVSSWorkFolder + '''
 	 rd /s /q "''' + Precompilefolder + '''_Files"'''
-	    }
+	    }*/
 	    
 	 
 	    
