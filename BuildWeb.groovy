@@ -188,7 +188,7 @@ stage('Get Code from VSS')
 	 if (CleanBuild =="No")
 	    {
 		/*Delete only the precompilefolder */
-		Precompilefolder = "\\BuildScript\\PrecompileFolder\\" + QCVSSProjectFolder 
+		Precompilefolder = "BuildScript\\PrecompileFolder\\" + QCVSSProjectFolder 
 	    }
 	  else
 	  {
@@ -223,7 +223,7 @@ stage('Get Code from VSS')
 	    else
 	    {
 	     
-             bat "xcopy \"" + "$WORKSPACE" + '\\' + QCVSSProjectFolder + ' ' +  QCVSSWorkFolder.replace("\\\\", "\\") + Precompilefolder + "\\QCommissionPortal_Files /E/H/I\"" 
+             bat "xcopy \"" + "$WORKSPACE" + '\\' + QCVSSProjectFolder + ' ' +  QCVSSWorkFolder.replace("\\\\", "\\") + '\\' + Precompilefolder + "\\QCommissionPortal_Files /E/H/I\"" 
 	  
 	  
 	    }
