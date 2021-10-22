@@ -217,7 +217,8 @@ stage('Get Code from VSS')
 	    else
 	    {
 		      bat '''  cd /d ''' + QCVSSWorkFolder + '''
-	 rd /s /q "''' + Precompilefolder + '''_Files"''' + Precompilefolder + '''_Files"'''
+	 rd /s /q "''' + Precompilefolder + '''_Files"''' 
+		    //+ Precompilefolder + '''_Files"'''
 		    
 		    /*       bat '''  cd /d ''' + QCVSSWorkFolder + '''
 	 rd /s /q "''' + Precompilefolder + '''_Files"'''*/
