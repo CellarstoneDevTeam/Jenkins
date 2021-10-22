@@ -223,7 +223,7 @@ stage('Get Code from VSS')
 	    else
 	    {
 	     
-             bat "xcopy \"" + "$WORKSPACE" + '\\' + QCVSSProjectFolder + ' ' +  QCVSSWorkFolder.replace("\\\\", "\\") + "\\QCommissionPortal //E//H//I"
+             print "xcopy \"" + "$WORKSPACE" + '\\' + QCVSSProjectFolder + ' ' +  QCVSSWorkFolder.replace("\\\\", "\\") + "\\QCommissionPortal //E//H//I" 
 	  
 	  
 	    }
