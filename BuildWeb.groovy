@@ -211,6 +211,9 @@ stage('Get Code from VSS')
         "'''+     VSSPath + ''' Get * -R -W -I-Y" '''
 	*/
 	    
+	    bat '''  cd /d ''' + QCVSSWorkFolder + '''
+	 rd /s /q "''' + Precompilefolder + '''"''' + '''
+	    
 	 git credentialsId: 'qc-robot',url: 'http://code.cellarstone.com:3000/QCommission/QCommissionPortal.git'
 
 	  if ( QCVSSProjectFolder== "QCommission Portal SSO")
@@ -219,8 +222,10 @@ stage('Get Code from VSS')
 	    }
 	    else
 	    {
-	    
-          bat "copy \"" + "$WORKSPACE" + '\\' + QCVSSProjectFolder +'\\*.*\" ' +  QCVSSWorkFolder.replace("\\\\", "\\") + "\\QCommissionPortal"
+	    print "xcopy \"" + "$WORKSPACE" + '\\' + QCVSSProjectFolder + ' ' +  QCVSSWorkFolder.replace("\\\\", "\\") + "\\QCommissionPortal /E/H/I"
+             bat "xcopy \"" + "$WORKSPACE" + '\\' + QCVSSProjectFolder + ' ' +  QCVSSWorkFolder.replace("\\\\", "\\") + "\\QCommissionPortal /E/H/I"
+	  
+	  
 	    }
      } 
 	
