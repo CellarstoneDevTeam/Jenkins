@@ -209,10 +209,17 @@ stage('Get Code from VSS')
          SET SSDIR='''  + SSDir   + '''
         "'''+ VSSPath + ''' CP "''' + QCVSSFolder + '//'+ QCVSSProjectFolder  + '''"''' +  '''
         "'''+     VSSPath + ''' Get * -R -W -I-Y" '''
-	*/
-	    
-	    bat '''  cd /d ''' + QCVSSWorkFolder + '''
+	*/  if ( QCVSSProjectFolder== "QCommission Portal SSO")
+	    {
+		 print 'SSO Project skipped copying'   
+	    }
+	    else
+	    {
+		       bat '''  cd /d ''' + QCVSSWorkFolder + '''
 	 rd /s /q "''' + Precompilefolder + '''_Files"'''
+	    }
+	    
+	 
 	    
 	 git credentialsId: 'qc-robot',url: 'http://code.cellarstone.com:3000/QCommission/QCommissionPortal.git'
 
