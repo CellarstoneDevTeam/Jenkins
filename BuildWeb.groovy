@@ -220,8 +220,8 @@ stage('Get Code from VSS')
 	 rd /s /q "''' + Precompilefolder + '''_Files"''' + Precompilefolder + '''_Files"'''
 		    
 		    /*       bat '''  cd /d ''' + QCVSSWorkFolder + '''
-	 rd /s /q "''' + Precompilefolder + '''_Files"'''
-	    }*/
+	 rd /s /q "''' + Precompilefolder + '''_Files"'''*/
+	    }
 	    
 	 
 	    
