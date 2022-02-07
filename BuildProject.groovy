@@ -50,6 +50,7 @@ def Release = env.Release
 def Build = env.Build
 def Patch = env.Patch
 def Platform = "${params.Platform}"
+	def DOTNETFRAMEWORK = env.DOTNETFRAMEWORK
 //def Platform = "Any CPU"
 def OutputPath = "Obj\\Release"
 def ProjectName = solution
@@ -79,7 +80,8 @@ def ProjectName = solution
         ''' /p:Release=''' + Release   + ''' /p:Build=''' + Build  + ''' /p:Patch=''' + Patch + ''' /p:Platform="''' + Platform + 
         '''" /p:BuildProject=''' + ProjectName +
         ''' /p:ProjectFolder=''' + ProjectPath +
-		  ''' /p:OutputPath=''' + OutputPath
+		  ''' /p:OutputPath=''' + OutputPath +
+		  ''' /p:TargetFrameworkVersion=''' + DOTNETFRAMEWORK 
 }
 
 @NonCPS
