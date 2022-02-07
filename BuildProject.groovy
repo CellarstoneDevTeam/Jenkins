@@ -80,8 +80,7 @@ def ProjectName = solution
         ''' /p:Release=''' + Release   + ''' /p:Build=''' + Build  + ''' /p:Patch=''' + Patch + ''' /p:Platform="''' + Platform + 
         '''" /p:BuildProject=''' + ProjectName +
         ''' /p:ProjectFolder=''' + ProjectPath +
-		  ''' /p:OutputPath=''' + OutputPath +
-		  ''' /p:TargetFrameworkVersion=''' + DOTNETFRAMEWORK 
+		  ''' /p:OutputPath=''' + OutputPath 
 }
 
 @NonCPS
