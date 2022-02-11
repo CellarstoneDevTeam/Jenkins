@@ -225,8 +225,9 @@ stage('Get Code from VSS')
 	    }
 	    
 	 //git branch: 'MultiLanguage', credentialsId: 'qc-robot', url: 'http://code.cellarstone.com:3000/QCommission/QCommissionPortal.git'
+	  git branch: 'QCMCIntegration', credentialsId: 'qc-robot', url: 'http://code.cellarstone.com:3000/QCommission/QCommissionPortal.git'
 	//git branch: 'Ruleset_Integration', credentialsId: 'qc-robot', url: 'http://code.cellarstone.com:3000/QCommission/QCommissionPortal.git'
-	 git credentialsId: 'qc-robot',url: 'http://code.cellarstone.com:3000/QCommission/QCommissionPortal.git'
+	 //git credentialsId: 'qc-robot',url: 'http://code.cellarstone.com:3000/QCommission/QCommissionPortal.git'
 
 	  if ( QCVSSProjectFolder== "QCommission Portal SSO")
 	    {
